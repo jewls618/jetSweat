@@ -1,0 +1,13 @@
+<% if current_user.avatar? %>
+  <%=  image_tag(current_user.avatar.url, class: "profile-pic") %></div>
+<% else %>
+  <%= image_tag("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRoiWq8MqUo4d1JqenwFQ-1pPmAWgHYLYT9P-UWOgBupcDxWPTKfg", class: "profile-pic") %>
+<% end %>
+
+<h1>Hello, <%=current_user.first_name%>!</h1>
+
+<p>Username: <%= current_user.username %></p>
+<p>Member: <%= current_user.first_name %> <%= current_user.last_name %></p>
+<p>Email: <%= current_user.email %></p>
+
+<p><%= link_to 'Edit Profile', edit_user_registration_path %></p>

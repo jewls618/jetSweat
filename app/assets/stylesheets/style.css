@@ -1,0 +1,39 @@
+body {
+  margin-top: 0;
+}
+.jetsweat {
+  background-color: black;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  margin: -10px;
+  font-size: 80px;
+}
+ul {
+  list-style: none;
+}
+#navbar ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5px;
+  margin: 10px;
+  float: right;
+}
+#navbar ul li {
+  padding: 0 5px;
+  color: #329ea2;
+}
+li.signed-in {
+    text-transform: lowercase;
+    font-variant: small-caps;
+    font-size: 1.1rem;
+}
+span.username {
+  color: #00868b;
+}
+.avatar {
+  height: 40px;
+  margin-left: -5px;
+  border: 2px solid black;
+}
