@@ -1,0 +1,18 @@
+#search {
+  width: 75%;
+  height: 100%;
+  padding: 100px;
+  font-size: 100px;
+}
+#search-bar {
+  text-align: center;
+  width: 100%;
+}
+.placeholder {
+  width: 80%;
+  padding: 10px;
+}
+p {
+  margin-top: -20px;
+  font-size: 2rem;
+}

@@ -6,7 +6,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Oswald" rel="stylesheet">
   </head>
 
   <body>
@@ -16,8 +17,12 @@
     <% end %>
     </div>
 
-    <%= render 'layouts/navbar' %>
+    <h1 id="jetsweat">jetSweat</h1>
+    <%= render 'layouts/searchbar' %>
+    <%= render 'layouts/pictures' %>
 
     <%= yield %>
+
+    <%= render 'layouts/navbar' %>
   </body>
 </html>

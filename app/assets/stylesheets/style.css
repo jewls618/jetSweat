@@ -1,14 +1,17 @@
 body {
   margin-top: 0;
-  font-family: "Righteous", serif;;
+  font-family: "Nunito", sans-serif;
+  background-color: black;
+  color: white;
 }
-.jetsweat {
+#jetsweat {
   background-color: black;
   color: white;
   padding: 50px;
   text-align: left;
-  margin: -10px;
+  margin: -10px 10px 0px -10px;
   font-size: 80px;
+  font-family: "Righteous", serif;;
 }
 ul {
   list-style: none;
@@ -41,6 +44,8 @@ span.username {
 .flash {
   color: white;
   background-color: black;
+  margin-top: 10px;
+  float: left;
 }
 li a {
   text-decoration: none;
