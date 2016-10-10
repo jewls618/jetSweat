@@ -1,0 +1,95 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/juliegraceffa/challenges/breakable-toy/jet-sweat/app/models/user.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/juliegraceffa/challenges/breakable-toy/jet-sweat/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/juliegraceffa/challenges/breakable-toy/jet-sweat/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/juliegraceffa/challenges/breakable-toy/jet-sweat/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/juliegraceffa/challenges/breakable-toy/jet-sweat/app/controllers/application_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/juliegraceffa/challenges/breakable-toy/jet-sweat/app/controllers/registrations_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/juliegraceffa/challenges/breakable-toy/jet-sweat/app/controllers/users_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/juliegraceffa/challenges/breakable-toy/jet-sweat/app/helpers/application_helper.rb": [
+        0,
+        0
+      ],
+      "/Users/juliegraceffa/challenges/breakable-toy/jet-sweat/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/juliegraceffa/challenges/breakable-toy/jet-sweat/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1476120677
+  }
+}

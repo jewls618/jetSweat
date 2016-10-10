@@ -1,11 +1,12 @@
 body {
   margin-top: 0;
+  font-family: "Righteous", serif;;
 }
 .jetsweat {
   background-color: black;
   color: white;
   padding: 50px;
-  text-align: center;
+  text-align: left;
   margin: -10px;
   font-size: 80px;
 }
@@ -25,9 +26,9 @@ ul {
   color: #329ea2;
 }
 li.signed-in {
-    text-transform: lowercase;
-    font-variant: small-caps;
-    font-size: 1.1rem;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  font-size: 1.1rem;
 }
 span.username {
   color: #00868b;
@@ -36,4 +37,12 @@ span.username {
   height: 40px;
   margin-left: -5px;
   border: 2px solid black;
+}
+.flash {
+  color: white;
+  background-color: black;
+}
+li a {
+  text-decoration: none;
+  color: white;
 }

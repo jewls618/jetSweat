@@ -6,12 +6,15 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
   </head>
 
   <body>
-    <% flash.each do |key, message| %>
+    <div class="flash">
+      <% flash.each do |key, message| %>
       <%= message %>
     <% end %>
+    </div>
 
     <%= render 'layouts/navbar' %>
 
