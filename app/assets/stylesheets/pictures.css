@@ -4,7 +4,7 @@
     padding:0;
     font-size:0;
     list-style:none;
-    background-color:#000;
+    background-color:white;
 }
 #rig li {
     display: inline-block;
@@ -29,9 +29,6 @@
     transform:scale(1);
     transition:all 1s;
 }
-#rig li:hover .rig-img {
-    transform:scale(1.05);
-}
 .rig-overlay {
     position: absolute;
     display:block;
@@ -40,10 +37,9 @@
     bottom: 0;
     right: 0;
     margin: auto;
-    background: #3DC0F1 url(img/link.png) no-repeat center 20%;
+    background: #00868b url(img/link.png) no-repeat center 20%;
     background-size:50px 50px;
     opacity:0;
-    filter:alpha(opacity=0);/*For IE6 - IE8*/
     transition:all 0.6s;
 }
 #rig li:hover .rig-overlay {
@@ -61,12 +57,9 @@
     font-size:18px;
     font-weight:bold;
     font-family: 'Oswald', sans-serif;
-    font-weight:normal!important;
     top:40%;
     color:white;
     opacity:0;
-    filter:alpha(opacity=0);/*For older IE*/
-    transform:translateY(-20px);
     transition:all .3s;
 }
 #rig li:hover .rig-text {
