@@ -64,4 +64,6 @@ a {
 .edit {
   color: #00868b;
 }
-#
+#class {
+  max-width: 200px;
+}
