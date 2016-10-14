@@ -61,7 +61,19 @@ a {
 .cancel {
   color: #00868b;
 }
-.edit {
+#class {
+  max-width: 200px;
+}
+.profile-pic {
+  text-align: center;
+  padding-top: 20px;
+}
+.profile-page {
+  width: 35%;
+  margin: 0 auto;
+  text-align: left;
   color: #00868b;
 }
-#
+button a {
+  color: black;
+}
