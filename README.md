@@ -1,6 +1,6 @@
 #jetSweat
 
-![Build Status](https://codeship.com/projects/179109)
+![Build Status](https://codeship.com/projects/179109/status?branch=master)
 
 
 #Heroku Link
