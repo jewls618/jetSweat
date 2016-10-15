@@ -1,0 +1,6 @@
+<ul>
+  <% @workouts.each do |w| %>
+    <li><%= link_to(w.name) %></li>
+    <li><%= w.location.city %></li>
+  <% end %>
+</ul>
