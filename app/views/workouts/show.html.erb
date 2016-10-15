@@ -1,0 +1,12 @@
+<h1><%= @location.city %></h1>
+
+<ul>
+  <li><%= @workout.name %></li>
+  <% if @workout.street %>
+    <li><%= @workout.street %></li>
+  <% end %>
+  <li><%= @workout.location.city %></li>
+  <% if @workout.phone %>
+    <li><%= @workout.phone %></li>
+  <% end %>
+</ul>

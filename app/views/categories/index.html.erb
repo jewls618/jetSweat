@@ -1,62 +1,14 @@
 <%= render 'layouts/header' %>
+
 <p class="tagline">Choose your workout:</p>
-<div class="picture-layout">
-  <ul id="rig">
-    <li>
-        <a class="rig-cell" href="#">
-            <img class="rig-img" src="http://96bda424cfcc34d9dd1a-0a7f10f87519dba22d2dbc6233a731e5.r41.cf2.rackcdn.com/simplybarre/barre_blog_copy.jpg" />
-            <span class="rig-overlay"></span>
-            <span class="rig-text">Class</span>
-        </a>
-    </li>
-    <li>
-        <a class="rig-cell" href="#">
-            <img class="rig-img" src="https://prod-academy-wp-content-uploads.s3.amazonaws.com/2015/12/onnitacademywod4.jpg" />
-            <span class="rig-overlay"></span>
-            <span class="rig-text">Custom</span>
-        </a>
-    </li>
-      <li>
-          <a class="rig-cell" href="#">
-              <img class="rig-img" src="http://luxurylaunches.com/wp-content/uploads/2014/09/peninsula-shanghai-gym.jpg" />
-              <span class="rig-overlay"></span>
-              <span class="rig-text">Gym</span>
-          </a>
-      </li>
-      <li>
-          <a class="rig-cell" href="#">
-              <img class="rig-img" src="https://partners.novascotia.com/sites/default/files/CBHNP%20Skyline%20Sunset%20Hike.jpg" />
-              <span class="rig-overlay"></span>
-              <span class="rig-text">Hike</span>
-          </a>
-      </li>
-      <li>
-          <a class="rig-cell" href="#">
-              <img class="rig-img" src="http://blog.meraevents.com/wp-content/uploads/2014/11/www.meraevents.com_39.jpg" />
-              <span class="rig-overlay"></span>
-              <span class="rig-text">Meetup</span>
-          </a>
-      </li>
-      <li>
-          <a class="rig-cell" href="#">
-              <img class="rig-img" src="http://discover.sap.com/content/dam/digitalhub/desktopimages/Best-run-city_276360_h_ergb_s_gl_1920x1280.jpg" />
-              <span class="rig-overlay"></span>
-              <span class="rig-text">Run</span>
-          </a>
-      </li>
-      <li>
-          <a class="rig-cell" href="#">
-              <img class="rig-img" src="https://static1.squarespace.com/static/563032b9e4b0465682348ce1/t/56cccd8cc6fc08356f9df8fc/1456262575475/" />
-              <span class="rig-overlay"></span>
-              <span class="rig-text">Sports</span>
-          </a>
-      </li>
-      <li>
-          <a class="rig-cell" href="#">
-              <img class="rig-img" src="https://www.teamunify.com/amsasc/_images/cust_bg_3643_1440216355832.jpg" />
-              <span class="rig-overlay"></span>
-              <span class="rig-text">Swim</span>
-          </a>
-      </li>
-  </ul>
-</div>
+
+<%= render 'categorypics' %>
+
+<ul>
+  <% @categories.each do |c| %>
+    <li><%= c.category %></li>
+    <% if c.photo %>
+      <li><%= image_tag(c.photo) %></li>
+    <% end %>
+  <% end %>
+</ul>

@@ -2,3 +2,12 @@
 <%= render 'layouts/header' %>
 <%= render 'layouts/searchbar' %>
 <%= render 'layouts/pictures' %>
+
+<ul>
+  <% @locations.each do |l| %>
+    <li><%= link_to l.city, categories_path %></li>
+    <% if l.photo %>
+      <li><%= image_tag(l.photo) %></li>
+    <% end %>
+  <% end %>
+</ul>

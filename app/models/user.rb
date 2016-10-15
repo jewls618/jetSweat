@@ -6,4 +6,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :locations
   has_many :categories
+  has_many :workouts
+
+  def admin?
+    role == 'admin'
+  end
 end
