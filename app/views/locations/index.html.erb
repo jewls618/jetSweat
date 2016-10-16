@@ -5,8 +5,10 @@
   <ul id="rig">
     <% @locations.each do |l| %>
       <li>
-        <a class="rig-cell" href="/categories">
-          <%= image_tag(l.photo, class: "rig-img") %>
+        <a class="rig-cell" href="/locations/<%= l.id %>/categories">
+          <% if l.photo %>
+            <%= image_tag(l.photo, class: "rig-img") %>
+          <% end %>
           <span class="rig-overlay"></span>
           <span class="rig-text"><%= l.city %></span>
         </a>

@@ -1,6 +1,10 @@
+<%= render 'layouts/header' %>
+
+<h1><%= @category.category %>'s in <%= @location.city %>:</h1>
+
 <ul>
   <% @workouts.each do |w| %>
-    <li><%= link_to(w.name) %></li>
-    <li><%= w.location.city %></li>
+    <a class="workout" href="/locations/<%= @location.id %>/categories/ <%= @category.id %>/workouts/ <%= w.id %>">
+    <li><%= w.name %></li></a>
   <% end %>
 </ul>

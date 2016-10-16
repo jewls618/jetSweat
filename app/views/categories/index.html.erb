@@ -6,7 +6,7 @@
   <ul id="rig">
     <% @categories.each do |c| %>
       <li>
-        <a class="rig-cell" href="/">
+        <a class="rig-cell" href="/locations/<%= @location.id %>/categories/<%= c.id %>/workouts">
           <%= image_tag(c.photo, class: "rig-img") %>
             <span class="rig-overlay"></span>
             <span class="rig-text"><%= c.category %></span>
