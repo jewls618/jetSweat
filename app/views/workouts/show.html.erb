@@ -1,7 +1,8 @@
-<h1><%= @location.city %></h1>
+<%= render 'layouts/header' %>
+
+<h1><%= @workout.name %></h1>
 
 <ul>
-  <li><%= @workout.name %></li>
   <% if @workout.street %>
     <li><%= @workout.street %></li>
   <% end %>
@@ -10,3 +11,5 @@
     <li><%= @workout.phone %></li>
   <% end %>
 </ul>
+
+<span id="back"><%= link_to "Back to Workouts", location_category_workouts_path %></span>
