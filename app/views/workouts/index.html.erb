@@ -7,6 +7,8 @@
     <%= @category.category %>ing Pools in <%= @location.city %>:
   <% elsif @category.category == 'Sports'%>
     <%= @category.category %> Facilicties in <%= @location.city %>:
+  <% elsif @category.category == 'Rock Climbing'%>
+    <%= @category.category %> in <%= @location.city %>:
   <% else %>
     <%= @category.category %>'s in <%= @location.city %>:
   <% end %>
