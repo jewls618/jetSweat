@@ -1,6 +1,16 @@
 <%= render 'layouts/header' %>
 
-<h1><%= @category.category %>'s in <%= @location.city %>:</h1>
+<h1>
+  <% if @category.category == 'Class' %>
+    <%= @category.category %>es in <%= @location.city %>:
+  <% elsif @category.category == 'Swim'%>
+    <%= @category.category %>ing Pools in <%= @location.city %>:
+  <% elsif @category.category == 'Sports'%>
+    <%= @category.category %> Facilicties in <%= @location.city %>:
+  <% else %>
+    <%= @category.category %>'s in <%= @location.city %>:
+  <% end %>
+</h1>
 
 <ul>
   <% @workouts.each do |w| %>

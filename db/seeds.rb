@@ -19,7 +19,7 @@ seattle = Location.create(city: "Seattle", photo: "https://encrypted-tbn3.gstati
 washington_dc = Location.create(city: "Washington, D.C.", photo: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ3r_zZTJLzZTgXHjH1_otLIQFEhy_1eB4SLlfZG4mq3SHAphPa")
 
 classes = Category.create(category: "Class", photo: "http://96bda424cfcc34d9dd1a-0a7f10f87519dba22d2dbc6233a731e5.r41.cf2.rackcdn.com/simplybarre/barre_blog_copy.jpg")
-custom = Category.create(category: "Custom", photo: "https://prod-academy-wp-content-uploads.s3.amazonaws.com/2015/12/onnitacademywod4.jpg")
+crossfit = Category.create(category: "Crossfit", photo: "https://prod-academy-wp-content-uploads.s3.amazonaws.com/2015/12/onnitacademywod4.jpg")
 gym = Category.create(category: "Gym", photo: "http://luxurylaunches.com/wp-content/uploads/2014/09/peninsula-shanghai-gym.jpg")
 hike = Category.create(category: "Hike", photo: "https://partners.novascotia.com/sites/default/files/CBHNP%20Skyline%20Sunset%20Hike.jpg")
 meetup = Category.create(category: "Meetup", photo: "http://blog.meraevents.com/wp-content/uploads/2014/11/www.meraevents.com_39.jpg")
