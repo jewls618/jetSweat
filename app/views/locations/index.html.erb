@@ -1,13 +1,16 @@
-
 <%= render 'layouts/header' %>
 <%= render 'layouts/searchbar' %>
-<%= render 'layouts/pictures' %>
 
-<ul>
-  <% @locations.each do |l| %>
-    <li><%= link_to l.city, categories_path %></li>
-    <% if l.photo %>
-      <li><%= image_tag(l.photo) %></li>
+<div class="picture-layout">
+  <ul id="rig">
+    <% @locations.each do |l| %>
+      <li>
+        <a class="rig-cell" href="/categories">
+          <%= image_tag(l.photo, class: "rig-img") %>
+          <span class="rig-overlay"></span>
+          <span class="rig-text"><%= l.city %></span>
+        </a>
+      </li>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
+</div>
