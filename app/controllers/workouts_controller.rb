@@ -1,7 +1,9 @@
 class WorkoutsController < ApplicationController
 
   def index
-    @workouts = Workout.all
+    @location = Location.find(params[:location_id])
+    @category = Category.find(params[:category_id])
+    @workouts = Workout.where(location: @location.city, category: @category.category)
   end
 
   def show

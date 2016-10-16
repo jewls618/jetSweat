@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
 
   def index
-    @categories = Category.all
+    @location = Location.find(params[:location_id])
+    @categories = Category.find_by(location: @location.name)
   end
 end
