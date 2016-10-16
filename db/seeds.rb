@@ -22,7 +22,7 @@ classes = Category.create(category: "Class", photo: "http://96bda424cfcc34d9dd1a
 crossfit = Category.create(category: "Crossfit", photo: "https://prod-academy-wp-content-uploads.s3.amazonaws.com/2015/12/onnitacademywod4.jpg")
 gym = Category.create(category: "Gym", photo: "http://luxurylaunches.com/wp-content/uploads/2014/09/peninsula-shanghai-gym.jpg")
 hike = Category.create(category: "Hike", photo: "https://partners.novascotia.com/sites/default/files/CBHNP%20Skyline%20Sunset%20Hike.jpg")
-meetup = Category.create(category: "Meetup", photo: "http://blog.meraevents.com/wp-content/uploads/2014/11/www.meraevents.com_39.jpg")
+rock_climbing = Category.create(category: "Rock Climbing", photo: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ6YxChOQt04SRPtb00EFDSG3YP0IgmzYKEaHksqCQK2PFRi29D")
 run = Category.create(category: "Run", photo: "http://discover.sap.com/content/dam/digitalhub/desktopimages/Best-run-city_276360_h_ergb_s_gl_1920x1280.jpg")
 sports = Category.create(category: "Sports", photo: "https://static1.squarespace.com/static/563032b9e4b0465682348ce1/t/56cccd8cc6fc08356f9df8fc/1456262575475/")
 swim = Category.create(category: "Swim", photo: "https://www.teamunify.com/amsasc/_images/cust_bg_3643_1440216355832.jpg")
