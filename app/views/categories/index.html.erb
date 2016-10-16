@@ -2,13 +2,16 @@
 
 <p class="tagline">Choose your workout:</p>
 
-<%= render 'categorypics' %>
-
-<ul>
-  <% @categories.each do |c| %>
-    <li><%= c.category %></li>
-    <% if c.photo %>
-      <li><%= image_tag(c.photo) %></li>
-    <% end %>
-  <% end %>
-</ul>
+<div class="picture-layout">
+  <ul id="rig">
+    <% @categories.each do |c| %>
+      <li>
+        <a class="rig-cell" href="/">
+          <%= image_tag(c.photo, class: "rig-img") %>
+            <span class="rig-overlay"></span>
+            <span class="rig-text"><%= c.category %></span>
+        </a>
+      <% end %>
+    </li>
+  </ul>
+</div>
