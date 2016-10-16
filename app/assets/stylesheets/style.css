@@ -71,9 +71,9 @@ li a {
   padding-top: 20px;
 }
 .profile-page {
-  width: 35%;
+  width: 80%;
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
   color: #00868b;
 }
 button a {
@@ -84,4 +84,14 @@ li {
 }
 h1 {
   color: #00868b;
+}
+a.back {
+  color: #00868b;
+}
+
+img.profile-pic  {
+  margin: 5px;
+  border-radius: 50%;
+  width: 350px;
+  margin: 0 auto;
 }
