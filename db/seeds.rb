@@ -16,4 +16,4 @@ new_orleans = Location.create(city: "New Orleans", photo: "https://encrypted-tbn
 new_york = Location.create(city: "New York", photo: "https://s-media-cache-ak0.pinimg.com/originals/39/60/b6/3960b613c265776676276d276e286a1c.jpg")
 san_francisco = Location.create(city: "San Francisco", photo: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRckHfTcVip4c1RW3EL2sfi-OY8ekDdFARM1wIWcE6VHM645KXE" )
 seattle = Location.create(city: "Seattle", photo: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTpwTsUG09iGtbM52OBucVju0zAQsR--dIQmJimUFPtSg0zVg-Y")
-washington_dc = Location.create("Washington, D.C.", photo: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ3r_zZTJLzZTgXHjH1_otLIQFEhy_1eB4SLlfZG4mq3SHAphPa")
+washington_dc = Location.create(city: "Washington, D.C.", photo: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ3r_zZTJLzZTgXHjH1_otLIQFEhy_1eB4SLlfZG4mq3SHAphPa")
