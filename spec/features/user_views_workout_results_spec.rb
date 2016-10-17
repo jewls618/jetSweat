@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'rails_helper'
 
-feature 'viewing categories' do
+feature 'viewing workout results' do
   let!(:location) { FactoryGirl.create(:location) }
   let!(:category) { FactoryGirl.create(:category) }
   let!(:user) { FactoryGirl.create(:user) }
