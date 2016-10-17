@@ -1,9 +1,10 @@
+<p class="tagline">Don't skip your next workout to travel!</p>
 <div id="search-bar" class="widget_search">
-  <p id="tagline">Don't skip your next workout to travel!</p>
-  <form role="search" method="get" id="searchform">
-    <div>
-      <input class="placeholder" type="text" placeholder="Where are you traveling to next...">
-      <input type="submit" id="searchsubmit" value="Take Off">
+    <div class="form">
+      <%= form_for @location do |f| %>
+        <%= f.label :city, "Where are you traveling to next?" %>
+        <%= f.text_field :city, size: 35, placeholder: "Boston, MA", class: "placeholder" %>
+        <%= f.submit "jetAway", class: "jetAway" %>
+     <% end %>
     </div>
-  </form>
 </div>

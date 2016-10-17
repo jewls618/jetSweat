@@ -9,9 +9,9 @@
         <a class="rig-cell" href="/locations/<%= l.id %>/categories">
           <% if l.photo %>
             <%= image_tag(l.photo, class: "rig-img") unless l.photo.blank? %>
-          <% end %>
           <span class="rig-overlay"></span>
           <span class="rig-text" ><%= l.city %></span>
+          <% end %>
         </a>
       </div>
       </li>
