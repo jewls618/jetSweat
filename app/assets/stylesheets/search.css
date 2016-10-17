@@ -1,18 +1,6 @@
-#search {
-  width: 75%;
-  height: 100%;
-  padding: 100px;
-  font-size: 100px;
-}
 #search-bar {
   text-align: center;
   width: 100%;
-}
-.placeholder {
-  width: 80%;
-  padding: 10px;
-  margin-bottom: 20px;
-  font-size: 25px;
 }
 #searchsubmit {
   font-size: 50px;
@@ -23,6 +11,17 @@ p {
   color: #00868b;
   margin-top: 15px;
 }
-p#tagline {
+p.tagline {
   text-align: center;
+}
+.form {
+  font-size: 1.4rem;
+  padding-bottom: 20px;
+}
+.jetAway {
+  font-size: 1.4rem;
+}
+.placeholder {
+  font-size: 1.2rem;
+  padding: 2px;
 }

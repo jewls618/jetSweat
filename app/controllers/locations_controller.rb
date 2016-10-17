@@ -5,10 +5,6 @@ class LocationsController < ApplicationController
     @location = Location.new
   end
 
-  def show
-    @location = Location.find(params[:id])
-  end
-
   def new
     @location = Location.new
   end
@@ -19,7 +15,7 @@ class LocationsController < ApplicationController
     if @location.save
       redirect_to location_categories_path(@location)
     else
-      render :index
+      redirect_to root_path
     end
   end
 
