@@ -95,3 +95,6 @@ img.profile-pic  {
   width: 350px;
   margin: 0 auto;
 }
+h1.category {
+  text-transform: uppercase;
+}
