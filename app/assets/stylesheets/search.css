@@ -15,7 +15,7 @@
   font-size: 25px;
 }
 #searchsubmit {
-  font-size: 115px;
+  font-size: 50px;
 }
 p {
   margin-top: -20px;
@@ -23,6 +23,6 @@ p {
   color: #00868b;
   margin-top: 15px;
 }
-p.tagline {
+p#tagline {
   text-align: center;
 }
