@@ -16,7 +16,7 @@
 
 <ul>
   <% @workouts.each do |w| %>
-    <a class="workout" href="/locations/<%= @location.id %>/categories/ <%= @category.id %>/workouts/ <%= w.id %>">
+    <a class="workout" href="/locations/<%= @location.id %>/categories/<%= @category.id %>/workouts/<%= w.id %>">
     <li><%= w.name %></li></a>
   <% end %>
 </ul>
