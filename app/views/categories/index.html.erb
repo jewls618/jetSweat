@@ -7,8 +7,8 @@
     <% @categories.each do |c| %>
       <li>
         <a class="rig-cell" href="/locations/<%= @location.id %>/categories/<%= c.id %>/workouts">
-          <%= image_tag(c.photo, class: "rig-img") %>
-            <span class="rig-overlay"></span>
+          <%= image_tag(c.photo, class: "rig-img") unless c.photo.blank? %>
+            <span class="rig-overlay" id="category"></span>
             <span class="rig-text"><%= c.category %></span>
         </a>
       <% end %>
