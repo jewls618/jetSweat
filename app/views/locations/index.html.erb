@@ -4,15 +4,15 @@
 <div class="picture-layout">
   <ul id="rig">
     <% @locations.each do |l| %>
-      <li>
-        <% unless l.photo.nil? %>
+      <% unless l.photo.nil? %>
+        <li>
           <a class="rig-cell" href="/locations/<%= l.id %>/categories">
             <%= image_tag(l.photo, class: "rig-img") unless l.photo.blank? %>
           <span class="rig-overlay"></span>
           <span class="rig-text" ><%= l.city %></span>
           </a>
-        <% end %>
-      </li>
+        </li>
+      <% end %>
     <% end %>
   </ul>
 </div>
