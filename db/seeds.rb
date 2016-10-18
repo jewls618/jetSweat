@@ -6,8 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-http://www.chcp.edu/sites/default/files/content/images/CHCP-Austin-Campus_0.jpg
-
 austin = Location.create(city: "Austin, TX", photo: "http://www.meekrealty.net/wp-content/uploads/2012/08/Austin-downtown.jpg")
 boston = Location.create(city: "Boston, MA", photo: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ94nnvhgph4syJ7FqRQow0MVw-dLt4MeJwjzG0X1DaNgchlghf")
 chicago = Location.create(city: "Chicago, IL", photo: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSlInbaOueLevf3MhUJDGaI05i8KuMWQ3u6sbDQQ_b7_57NZbxXhw")

@@ -1,0 +1,30 @@
+<%= render 'layouts/header' %>
+
+<h1>ADD A WORKOUT:</h1>
+
+<div class="new-wokrout">
+  <div class="form">
+    <%= form_for [@location, @category, @workout] do |f| %>
+      <%= f.label :name, "*Name:" %>
+      <%= f.text_field :name, autofocus: true %><br />
+
+      <%= f.label :phone, "Phone:" %>
+      <%= f.text_field :phone %><br / >
+
+      <%= f.label :street, "Address:" %>
+      <%= f.text_field :street %><br / >
+
+      <%= f.label :hours, "Hours:" %>
+      <%= f.text_field :hours %><br / >
+
+      <%= f.label :price, "Price:" %>
+      <%= f.text_field :price %><br / >
+
+      <%= f.submit "Add Workout", class: "submit" %>
+   <% end %>
+   <p class="required">*required</p>
+  </div>
+
+</div>
+
+<span><%= link_to "Back to Results", location_category_workouts_path, class: "back" %></span>
