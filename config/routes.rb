@@ -7,5 +7,4 @@ Rails.application.routes.draw do
       resources :workouts
     end
   end
-  resources :categories, only: [:index]
 end

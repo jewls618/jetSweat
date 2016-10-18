@@ -1,11 +1,12 @@
 <%= render 'layouts/header' %>
 
-<h1><%= @workout["name"] %></h1>
+<h1><%= @workout.name %></h1>
 
 <ul>
-  <li><%= @workout["formatted_address"]%></li>
-  <li>Hours: <%= @workout["opening_hours"] %></li>
-  <li>Rating: <%= @workout["rating"] %></li>
+  <li><%= @workout.street%></li>
+  <% if !@workout.rating.nil? %>
+    <li>Rating: <%= @workout.rating %></li>
+  <% end %>
 </ul>
 
 <span><%= link_to "Back to Results", location_category_workouts_path, class: "back" %></span>

@@ -13,8 +13,10 @@
 </h1>
 
 <ul>
-  <% @workouts["results"].each do |w| %>
-  <li><%= link_to(w["name"], root_path) %>,
-  <%= w["formatted_address"] %></li>
+  <% @workout.each do |w| %>
+  <li>
+    <%= link_to w.name, location_category_workout_path(@location.id, @category.id, w.id) %>
+    <%= w.street %>
+  </li>
   <% end %>
 </ul>
