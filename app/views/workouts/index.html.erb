@@ -13,14 +13,13 @@
 </h1>
 
 <ul>
-  <% @workout.each do |w| %>
+  <% @all_workouts.each do |w| %>
   <li>
-    <%= link_to w.name, location_category_workout_path(@location.id, @category.id, w.id) %>
+    <%= link_to w.name, location_category_workout_path(@location.id, @category.id, w.id) %><br />
     <%= w.street %>
-  </li>
+  </li><br />
   <% end %>
 </ul>
-
 
 <span>  <%= link_to "Add New Workout", new_location_category_workout_path, class: "back add" %>
 </span>

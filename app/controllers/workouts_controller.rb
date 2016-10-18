@@ -1,10 +1,12 @@
 class WorkoutsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @location = Location.find(params[:location_id])
     @category = Category.find(params[:category_id])
     @workouts = get_data(@category.category, @location.city)
     @workout = new_workout(@workouts, @location.id, @category.id)
+    @all_workouts = Workout.all.where(location_id: @location.id, category_id: @category.id)
   end
 
   def show
@@ -13,12 +15,23 @@ class WorkoutsController < ApplicationController
     @workout = Workout.find(params[:id])
   end
 
+  def new
+    @workout = Workout.new
+    @location = Location.find(params[:location_id])
+    @category = Category.find(params[:category_id])
+  end
+
   def create
     @workout = Workout.new(workout_params)
+    @location = Location.find(params[:location_id])
+    @category = Category.find(params[:category_id])
 
-    if @wokrout.save
+    @workout.category_id = @category.id
+    @workout.location_id = @location.id
+
+    if @workout.save
       redirect_to location_category_workouts_path
-      flash[:success] = "Workout added successfully"
+      flash[:success] = "Workout has been added successfully."
     else
       @workout.errors.any?
       flash[:notice] = @workout.errors.full_messages.join(", ")
@@ -41,7 +54,7 @@ class WorkoutsController < ApplicationController
   def new_workout(workout, location, category)
     workout_objects = []
     workout["results"].each do |w|
-      workout_objects << Workout.create(name: w["name"], street: w["formatted_address"], location_id: location, category_id: category)
+      workout_objects << Workout.find_or_create_by(name: w["name"], street: w["formatted_address"], location_id: location, category_id: category)
     end
     return workout_objects
   end

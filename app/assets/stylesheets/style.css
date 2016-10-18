@@ -98,3 +98,7 @@ img.profile-pic  {
 h1.category {
   text-transform: uppercase;
 }
+p.required {
+  color: red;
+  font-size: 0.7rem;
+}

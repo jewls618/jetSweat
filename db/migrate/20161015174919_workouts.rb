@@ -6,7 +6,7 @@ class Workouts < ActiveRecord::Migration[5.0]
       t.string :hours
       t.string :price
       t.integer :location_id
-      t.string :street
+      t.string :street, unique: true
       t.string :zip
 
       t.timestamps
