@@ -5,15 +5,13 @@
   <ul id="rig">
     <% @locations.each do |l| %>
       <li>
-        <div id=<%= l.city %>>
-          <% unless l.photo.nil? %>
-            <a class="rig-cell" href="/locations/<%= l.id %>/categories">
-              <%= image_tag(l.photo, class: "rig-img") unless l.photo.blank? %>
-            <span class="rig-overlay"></span>
-            <span class="rig-text" ><%= l.city %></span>
-            </a>
-          <% end %>
-      </div>
+        <% unless l.photo.nil? %>
+          <a class="rig-cell" href="/locations/<%= l.id %>/categories">
+            <%= image_tag(l.photo, class: "rig-img") unless l.photo.blank? %>
+          <span class="rig-overlay"></span>
+          <span class="rig-text" ><%= l.city %></span>
+          </a>
+        <% end %>
       </li>
     <% end %>
   </ul>
