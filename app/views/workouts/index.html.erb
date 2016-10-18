@@ -14,7 +14,7 @@
 
 <ul>
   <% @workouts["results"].each do |w| %>
-  <li><%= link_to(w["name"], location_category_workouts_path(@location)) %>,
+  <li><%= link_to(w["name"], root_path) %>,
   <%= w["formatted_address"] %></li>
   <% end %>
 </ul>

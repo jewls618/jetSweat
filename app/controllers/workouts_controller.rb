@@ -5,15 +5,16 @@ class WorkoutsController < ApplicationController
     @category = Category.find(params[:category_id])
     # @workouts = Workout.where(location: @location.id, category: @category.id)
     @workouts = get_data(@category.category, @location.city)
+
   end
 
   def show
     @location = Location.find(params[:location_id])
     @category = Category.find(params[:category_id])
     # @workout = Workout.find(params[:id])
-    @workouts = get_data(@category.category, @location.city)
+    # @workouts = get_data(@category.category, @location.city)
 
-    @workout = @workouts.each { |w| puts w }
+    # @workout = @workouts.each { |w| puts w }
   end
 
   private
