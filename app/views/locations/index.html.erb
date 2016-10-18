@@ -6,7 +6,7 @@
     <% @locations.each do |l| %>
       <li>
         <div id=<%= l.city %>>
-          <% if l.photo %>
+          <% unless l.photo.nil? %>
             <a class="rig-cell" href="/locations/<%= l.id %>/categories">
               <%= image_tag(l.photo, class: "rig-img") unless l.photo.blank? %>
             <span class="rig-overlay"></span>
