@@ -2,6 +2,10 @@
 
 <h1><%= @workout.name %></h1>
 
+  <% if current_user.admin? %>
+      <button type="button"><%= link_to 'Delete Workout', location_category_workout_path(@workout), method: :delete %></button>
+  <% end %>
+
 <ul>
   <li><%= @workout.street%></li>
 </ul>
