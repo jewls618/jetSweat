@@ -13,10 +13,23 @@ class WorkoutsController < ApplicationController
     @workout = Workout.find(params[:id])
   end
 
+  def create
+    @workout = Workout.new(workout_params)
+
+    if @wokrout.save
+      redirect_to location_category_workouts_path
+      flash[:success] = "Workout added successfully"
+    else
+      @workout.errors.any?
+      flash[:notice] = @workout.errors.full_messages.join(", ")
+      render :new
+    end
+  end
+
   private
 
   def workout_params
-    params.require(:workout).permit()
+    params.require(:workout).permit(:name, :category_id, :hours, :price, :location_id, :street, :phone, :rating)
   end
 
   def get_data(category, location)
