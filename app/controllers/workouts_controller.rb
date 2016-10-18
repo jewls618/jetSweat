@@ -27,7 +27,7 @@ class WorkoutsController < ApplicationController
     @workout = Workout.find(params[:id])
     @workout.destroy
     flash[:notice] = 'Workout deleted'
-    redirect_to location_category_workouts_path(@location.id, @category.id)
+    redirect_to location_category_workouts_path
   end
 
   def create
