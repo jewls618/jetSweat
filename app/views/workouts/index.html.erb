@@ -1,22 +1,20 @@
 <%= render 'layouts/header' %>
 
 <h1 class="category">
-  <% if @category.category == 'Class' %>
+  <% if @category.category == 'Barre Class' || @category.category == 'Spin Class' %>
     <%= @category.category %>es in <%= @location.city %>:
   <% elsif @category.category == 'Swim'%>
     <%= @category.category %>ming Pools in <%= @location.city %>:
-  <% elsif @category.category == 'Sports'%>
-    <%= @category.category %> Facilicties in <%= @location.city %>:
   <% elsif @category.category == 'Rock Climbing'%>
     <%= @category.category %> in <%= @location.city %>:
   <% else %>
-    <%= @category.category %>'s in <%= @location.city %>:
+    <%= @category.category %> in <%= @location.city %>:
   <% end %>
 </h1>
 
 <ul>
-  <% @workouts.each do |w| %>
-    <a class="workout" href="/locations/<%= @location.id %>/categories/<%= @category.id %>/workouts/<%= w.id %>">
-    <li><%= w.name %></li></a>
+  <% @workouts["results"].each do |w| %>
+  <li><%= link_to(w["name"], location_category_workouts_path(@location)) %>,
+  <%= w["formatted_address"] %></li>
   <% end %>
 </ul>
