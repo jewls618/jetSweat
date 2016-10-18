@@ -28,7 +28,7 @@ class WorkoutsController < ApplicationController
   def new_workout(workout, location, category)
     workout_objects = []
     workout["results"].each do |w|
-      workout_objects << Workout.create(name: w["name"], street: w["formatted_address"], rating: w["rating"], location_id: location, category_id: category)
+      workout_objects << Workout.create(name: w["name"], street: w["formatted_address"], location_id: location, category_id: category)
     end
     return workout_objects
   end
