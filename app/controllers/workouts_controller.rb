@@ -7,6 +7,10 @@ class WorkoutsController < ApplicationController
     @workouts = get_data(@category.category, @location.city)
     @workout = new_workout(@workouts, @location.id, @category.id)
     @all_workouts = Workout.all.where(location_id: @location.id, category_id: @category.id)
+
+    if params[:search]
+      @all_workouts = Workout.search(params[:search])
+    end
   end
 
   def show

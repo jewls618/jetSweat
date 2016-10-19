@@ -1,5 +1,16 @@
 <%= render 'layouts/header' %>
 
+<div id="search">
+  <%= form_tag(location_category_workouts_path(@location.id, @category.id), method: 'get', id: 'search-form') do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Workouts" %>
+    <%= submit_tag "Search", name: nil %>
+    <% if @all_workouts.blank? %>
+      <p id="search-results">No results found.</p>
+    <% end %>
+  <% end %>
+
+</div>
+
 <h1 class="category">
   <% if @category.category == 'Barre Class' || @category.category == 'Spin Class' %>
     <%= @category.category %>es in <%= @location.city %>:
