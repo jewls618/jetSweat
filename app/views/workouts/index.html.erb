@@ -2,7 +2,7 @@
 
 <div id="search">
   <%= form_tag(location_category_workouts_path(@location.id, @category.id), method: 'get', id: 'search-form') do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Workouts" %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search All Workouts" %>
     <%= submit_tag "Search", name: nil %>
     <% if @all_workouts.blank? %>
       <p id="search-results">No results found.</p>
