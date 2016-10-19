@@ -4,7 +4,7 @@ class WorkoutsController < ApplicationController
   def index
     @location = Location.find(params[:location_id])
     @category = Category.find(params[:category_id])
-    @workouts = get_data(@category.category, @location.city)
+    @workouts = get_google_data(@category.category, @location.city)
     @workout = new_workout(@workouts, @location.id, @category.id)
     @all_workouts = Workout.all.where(location_id: @location.id, category_id: @category.id)
 
@@ -17,6 +17,14 @@ class WorkoutsController < ApplicationController
     @location = Location.find(params[:location_id])
     @category = Category.find(params[:category_id])
     @workout = Workout.find(params[:id])
+
+    params = {
+      term: @workout.name,
+      category_filter: ("fitness"),
+      limit: 1
+    }
+
+    @yelp_data = Yelp.client.search(@location.city, params)
   end
 
   def new
@@ -75,7 +83,7 @@ class WorkoutsController < ApplicationController
     params.require(:workout).permit(:name, :category_id, :hours, :price, :location_id, :street, :phone, :rating)
   end
 
-  def get_data(category, location)
+  def get_google_data(category, location)
     uri = URI("https://maps.googleapis.com/maps/api/place/textsearch/json?query=#{category}+in+#{location}&key=#{ENV['GOOGLE_PLACES_API']}")
     response = Net::HTTP.get_response(uri)
     JSON.parse(response.body)

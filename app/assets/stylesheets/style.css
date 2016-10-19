@@ -106,3 +106,9 @@ p.required {
 .city {
   text-transform: uppercase;
 }
+.yelp {
+  color: red;
+}
+.yelp:hover {
+  color: pink;
+}

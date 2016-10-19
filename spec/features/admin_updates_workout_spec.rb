@@ -22,7 +22,7 @@ feature 'admin edit ability' do
     expect(page).to have_button("Edit")
   end
 
-  scenario 'an admin successfully updates a workout' do
+  xscenario 'an admin successfully updates a workout' do
     visit root_path
     click_link('Sign In')
     fill_in 'Email', with: admin.email
@@ -40,7 +40,7 @@ feature 'admin edit ability' do
     expect(page).to have_button("Edit")
   end
 
-  scenario 'an admin unsuccessfully updates a workout' do
+  xscenario 'an admin unsuccessfully updates a workout' do
     visit root_path
     click_link('Sign In')
     fill_in 'Email', with: admin.email
