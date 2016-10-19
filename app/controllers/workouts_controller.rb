@@ -26,8 +26,25 @@ class WorkoutsController < ApplicationController
     @category = Category.find(params[:category_id])
     @workout = Workout.find(params[:id])
     @workout.destroy
-    flash[:notice] = 'Workout deleted'
+    flash[:notice] = 'Workout deleted.'
     redirect_to location_category_workouts_path
+  end
+
+  def edit
+    @location = Location.find(params[:location_id])
+    @category = Category.find(params[:category_id])
+    @workout = Workout.find(params[:id])
+  end
+
+  def update
+    @location = Location.find(params[:location_id])
+    @category = Category.find(params[:category_id])
+    @workout = Workout.find(params[:id])
+    if @workout.update_attributes(workout_params)
+      redirect_to location_category_workout_path(@location.id, @category.id, @workout.id)
+    else
+      render :edit
+    end
   end
 
   def create

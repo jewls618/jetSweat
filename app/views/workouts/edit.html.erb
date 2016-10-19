@@ -1,8 +1,8 @@
 <%= render 'layouts/header' %>
 
-<h1>ADD A WORKOUT:</h1>
+<h1>EDIT WORKOUT:</h1>
 
-<div class="new-wokrout">
+<div class="edit-workout">
   <div class="form">
     <%= form_for [@location, @category, @workout] do |f| %>
       <%= f.label :name, "*Name:" %>
@@ -20,10 +20,8 @@
       <%= f.label :price, "Price:" %>
       <%= f.text_field :price %><br / >
 
-      <%= f.submit "Add Workout", class: "submit" %>
+      <%= f.submit "Save Workout", class: "submit" %>
    <% end %>
    <p class="required">*required</p>
   </div>
 </div>
-
-<span><%= link_to "Back to Results", location_category_workouts_path, class: "back" %></span>

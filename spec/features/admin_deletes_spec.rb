@@ -47,7 +47,7 @@ feature 'admin delete ability' do
     expect(page).to_not have_button("Delete")
   end
 
-  scenario 'an unauthenticated user cannot delete reviews' do
+  scenario 'an unauthenticated user cannot delete workouts' do
     visit root_path
 
     expect(page).to have_content('jetSweat')
