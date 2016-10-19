@@ -1,5 +1,14 @@
+<%= render 'layouts/header' %>
+
+<h1>USERS:</h1>
+
 <ul>
-  <% @users.each do |u| %>
-    <li><%= u.username %></li>
+  <% @users.each do |user| %>
+    <li><%= user.username %></li>
+    <% if current_user.admin? %>
+      <li class="delete"><%= button_to 'Delete', user, method: :delete %></li>
+    <% end %>
   <% end %>
 </ul>
+
+<span><%= link_to 'Back to Locations', root_path, class: "back" %></p>

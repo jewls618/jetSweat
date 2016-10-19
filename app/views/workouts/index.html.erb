@@ -15,9 +15,11 @@
 <ul>
   <% @all_workouts.each do |w| %>
   <li>
-    <%= link_to w.name, location_category_workout_path(@location.id, @category.id, w.id) %><br />
+    <%= link_to w.name, location_category_workout_path(@location.id, @category.id, w.id) %>
+    <br />
     <%= w.street %>
   </li><br />
+
   <% end %>
 </ul>
 
