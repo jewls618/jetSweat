@@ -12,8 +12,19 @@
   <% end %>
 <% end %>
 
-<ul>
-  <li><%= @workout.street%></li>
-</ul>
+  <h4>Address: <%= @workout.street%></h4>
+
+<% if @yelp_data %>
+  <ul>
+    <% @yelp_data.businesses.each do |result| %>
+      <li>Phone: <%= result.display_phone %></li>
+      <li>Rating: <%= result.rating %></li>
+      <% if result.deals %>
+      <li>Deals: <%= result.deals %></li><br />
+      <% end %>
+      <li><%= link_to "Check out more on Yelp!", result.mobile_url, target: "blank", class: "yelp" %></li>
+    <% end %>
+  </ul>
+  <% end %>
 
 <span><%= link_to "Back to Results", location_category_workouts_path, class: "back" %></span>
