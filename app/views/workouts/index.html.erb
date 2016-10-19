@@ -1,5 +1,8 @@
 <%= render 'layouts/header' %>
 
+<span>  <%= link_to "Add New Workout", new_location_category_workout_path, class: "back add" %>
+</span>
+
 <h1 class="category">
   <% if @category.category == 'Barre Class' || @category.category == 'Spin Class' %>
     <%= @category.category %>es in <%= @location.city %>:
@@ -23,5 +26,5 @@
   <% end %>
 </ul>
 
-<span>  <%= link_to "Add New Workout", new_location_category_workout_path, class: "back add" %>
+<span>  <%= link_to "Back to Categories", location_categories_path(@location.id), class: "back add" %>
 </span>

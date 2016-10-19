@@ -102,3 +102,6 @@ p.required {
   color: red;
   font-size: 0.7rem;
 }
+.city {
+  text-transform: uppercase;
+}
