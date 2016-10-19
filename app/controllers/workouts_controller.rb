@@ -96,6 +96,4 @@ class WorkoutsController < ApplicationController
     end
     return workout_objects
   end
-
-
 end
