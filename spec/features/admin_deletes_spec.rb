@@ -1,7 +1,8 @@
 require 'spec_helper'
 require 'rails_helper'
+require 'support/vcr'
 
-feature 'admin delete ability' do
+feature 'admin delete ability', vcr: true do
   let!(:admin) { FactoryGirl.create(:user, role: 'admin') }
   let!(:user) { FactoryGirl.create(:user) }
   let!(:users) { FactoryGirl.create_list(:user, 5) }
