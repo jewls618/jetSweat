@@ -23,8 +23,7 @@ class WorkoutsController < ApplicationController
       category_filter: ("fitness"),
       limit: 1
     }
-
-    @yelp_data = Yelp.client.search(@location.city, params)
+    @yelp_data = Yelp.client.search(@workout.street, params)
   end
 
   def new
