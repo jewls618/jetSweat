@@ -22,6 +22,9 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'rspec-rails'
+  gem "vcr"
+  gem "webmock"
+  gem 'yelp'
 end
 
 group :development do

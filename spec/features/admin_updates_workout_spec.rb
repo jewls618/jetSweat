@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'rails_helper'
 
-feature 'admin edit ability' do
+feature 'admin edit ability', vcr: true do
   let!(:admin) { FactoryGirl.create(:user, role: 'admin') }
   let!(:user) { FactoryGirl.create(:user) }
   let!(:users) { FactoryGirl.create_list(:user, 5) }
@@ -22,7 +22,7 @@ feature 'admin edit ability' do
     expect(page).to have_button("Edit")
   end
 
-  xscenario 'an admin successfully updates a workout' do
+  scenario 'an admin successfully updates a workout' do
     visit root_path
     click_link('Sign In')
     fill_in 'Email', with: admin.email
@@ -40,7 +40,7 @@ feature 'admin edit ability' do
     expect(page).to have_button("Edit")
   end
 
-  xscenario 'an admin unsuccessfully updates a workout' do
+  scenario 'an admin unsuccessfully updates a workout' do
     visit root_path
     click_link('Sign In')
     fill_in 'Email', with: admin.email
