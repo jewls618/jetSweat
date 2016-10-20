@@ -8,8 +8,8 @@ class WorkoutsController < ApplicationController
     @workout = new_workout(@workouts, @location.id, @category.id)
     @all_workouts = Workout.all.where(location_id: @location.id, category_id: @category.id)
 
-    if params[:search]
-      @all_workouts = Workout.search(params[:search])
+    if params[:search].present?
+      @all_workouts = @location.workouts.where(category: @category).search(params[:search])
     end
   end
 
