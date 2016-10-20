@@ -8,6 +8,10 @@ class User < ApplicationRecord
   has_many :categories
   has_many :workouts
 
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :email, presence: true, uniqueness: true
+  
   def admin?
     role == 'admin'
   end
