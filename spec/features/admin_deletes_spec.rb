@@ -22,6 +22,16 @@ feature 'admin delete ability', vcr: true do
     users.each do |user|
       expect(page).to have_content(user.username)
     end
+  end
+
+  scenario 'an admin deletes users when desired' do
+    visit root_path
+    click_link('Sign In')
+    fill_in 'Email', with: admin.email
+    fill_in 'Password', with: admin.password
+    click_button 'Log in'
+    click_link("Admin Controls")
+
     expect(page).to have_button("Delete")
   end
 

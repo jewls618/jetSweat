@@ -7,7 +7,6 @@ feature 'viewing categories' do
   let!(:user) { FactoryGirl.create(:user) }
 
   scenario 'unauthenticated user can view list of categories after defining location' do
-
     visit "/locations/#{location.id}/categories"
 
     expect(page).to have_content(category.category)
@@ -15,7 +14,6 @@ feature 'viewing categories' do
   end
 
   scenario 'authenticated user can view list of categories after defining location' do
-
     visit root_path
     user_signs_in(user)
     click_link(location.city)

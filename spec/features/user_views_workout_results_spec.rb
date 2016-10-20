@@ -8,7 +8,6 @@ feature 'viewing workout results' do
   let!(:workout) { Workout.create(name: "Test Gym", category_id: category.id, location_id: location.id) }
 
   scenario 'unauthenticated user can view list of workouts after defining location and category' do
-
     visit "/locations/#{location.id}/categories/#{category.id}/workouts"
 
     expect(page).to have_content(category.category)
@@ -16,7 +15,6 @@ feature 'viewing workout results' do
   end
 
   scenario 'authenticated user can view list of workouts after defining location and category' do
-
     visit root_path
     user_signs_in(user)
     click_link(location.city)

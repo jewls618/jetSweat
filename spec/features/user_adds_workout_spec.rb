@@ -8,7 +8,6 @@ feature 'adding workouts' do
   let!(:workout) { Workout.create(name: "Test Gym", category_id: category.id, location_id: location.id, street: '123 Main St') }
 
   scenario 'unauthenticated user cannot add workouts' do
-
     visit root_path
     click_link(location.city)
     click_link(category.category)
@@ -20,7 +19,6 @@ feature 'adding workouts' do
   end
 
   scenario 'authenticated user can add workouts' do
-
     visit root_path
     user_signs_in(user)
     click_link(location.city)
@@ -32,7 +30,6 @@ feature 'adding workouts' do
   end
 
   scenario 'authenticated user adds workout successfully' do
-
     visit root_path
     user_signs_in(user)
     click_link(location.city)
@@ -48,7 +45,6 @@ feature 'adding workouts' do
   end
 
   scenario 'authenticated user adds workout unsuccessfully' do
-
     visit root_path
     user_signs_in(user)
     click_link(location.city)

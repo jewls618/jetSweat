@@ -6,7 +6,6 @@ feature 'viewing profile show page' do
 
   scenario 'current user views own profile account page' do
     visit root_path
-
     click_link 'Sign In'
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
