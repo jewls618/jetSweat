@@ -17,6 +17,7 @@ class WorkoutsController < ApplicationController
     @location = Location.find(params[:location_id])
     @category = Category.find(params[:category_id])
     @workout = Workout.find(params[:id])
+    @favorite = Favorite.new
 
     params = {
       term: @workout.name,

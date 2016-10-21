@@ -19,6 +19,8 @@ class LocationsController < ApplicationController
     end
   end
 
+  protected
+  
   def location_params
     params.require(:location).permit(:city)
   end

@@ -7,4 +7,9 @@ Rails.application.routes.draw do
       resources :workouts
     end
   end
+  resources :workouts do
+    resources :favorites
+  end
+
+  resources :favorites
 end
