@@ -18,6 +18,8 @@ class WorkoutsController < ApplicationController
     @category = Category.find(params[:category_id])
     @workout = Workout.find(params[:id])
     @favorite = Favorite.new
+    @comment = Comment.new
+    @comments = @workout.comments
 
     params = {
       term: @workout.name,

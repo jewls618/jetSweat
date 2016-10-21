@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :workouts do
-    resources :comments
+    resources :comments, except: [:index]
   end
 
   resources :workouts do
