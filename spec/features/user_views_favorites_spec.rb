@@ -19,17 +19,4 @@ feature 'viewing favorites' do
 
     expect(page).to have_content("Favorite Workouts")
   end
-
-  scenario 'authenticated user can add workouts to favorites' do
-    visit root_path
-    user_signs_in(user)
-    click_link(location.city)
-    click_link(category.category)
-    click_link(workout.name)
-    click_button("Add to Favorites")
-
-    expect(page).to have_content(workout.name)
-    expect(page).to have_content(workout.street)
-    expect(page).to have_content('Workout has been added to favorites.')
-  end
 end

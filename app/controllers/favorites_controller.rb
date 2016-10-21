@@ -32,6 +32,13 @@ class FavoritesController < ApplicationController
     end
   end
 
+  def destroy
+    @favorite = Favorite.find(params[:id])
+    @favorite.destroy
+    flash[:notice] = 'Removed from favorites.'
+    redirect_back fallback_location: :back
+  end
+
   protected
 
   def fav_params

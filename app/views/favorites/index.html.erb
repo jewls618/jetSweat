@@ -8,6 +8,7 @@
     <li>
       <%= link_to fav.workout.name, location_category_workout_path(1, fav.workout.category.id, fav.workout.id) %>,
       <%= fav.workout.street %>
+      <button type="button"><%= link_to 'Remove', favorite_path(fav), method: :delete %></button>
     </li>
   <% end %>
 </ul>
