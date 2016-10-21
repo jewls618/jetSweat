@@ -1,6 +1,7 @@
 class Workout < ActiveRecord::Base
   has_many :users, through: :favorites
   has_many :favorites
+  has_many :comments
   belongs_to :location
   belongs_to :category
 

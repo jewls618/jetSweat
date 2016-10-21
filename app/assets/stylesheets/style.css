@@ -112,3 +112,9 @@ p.required {
 .yelp:hover {
   color: pink;
 }
+h1#workout-name {
+  margin-bottom: -35px;
+}
+h3.comments {
+  text-decoration: underline;
+}
