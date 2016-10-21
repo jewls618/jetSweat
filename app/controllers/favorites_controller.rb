@@ -25,8 +25,8 @@ class FavoritesController < ApplicationController
       flash[:notice] = "Workout has been added to favorites."
       redirect_back fallback_location: :back
     else
-      flash[:notice] = "Please sign in to save workout"
-      redirect_to root_path
+      flash[:notice] = "Workout is already a favorite."
+      redirect_back fallback_location: :back
     end
   end
 
