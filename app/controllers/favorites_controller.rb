@@ -21,11 +21,8 @@ class FavoritesController < ApplicationController
     @favorite.workout_id = @workout.id
     @favorite.user_id = @user.id
 
-    if @favorite.new_record?
+    if @favorite.save
       flash[:notice] = "Workout has been added to favorites."
-      redirect_to :back
-    elsif @favorite.save
-      flash[:notice] = "Workout ."
       redirect_to :back
     else
       flash[:notice] = "Please sign in to save workout"
