@@ -21,6 +21,8 @@ class FavoritesController < ApplicationController
     @favorite.workout_id = @workout.id
     @favorite.user_id = @user.id
 
+    @category = @favorite.workout.category
+
     if @favorite.save
       flash[:notice] = "Workout has been added to favorites."
       redirect_back fallback_location: :back
