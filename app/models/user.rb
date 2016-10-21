@@ -6,12 +6,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :locations
   has_many :categories
-  has_many :workouts
+  has_many :favorites
+  has_many :workouts, through: :favorites
 
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true
-  
+
   def admin?
     role == 'admin'
   end

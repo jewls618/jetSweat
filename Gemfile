@@ -23,8 +23,11 @@ group :development, :test do
   gem 'launchy'
   gem 'rspec-rails'
   gem "vcr"
-  gem "webmock"
   gem 'yelp'
+end
+
+group :test do
+  gem "webmock"
 end
 
 group :development do

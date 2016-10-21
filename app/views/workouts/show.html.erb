@@ -21,7 +21,17 @@
       <li>Yelp Rating: <%= result.rating %></li>
       <li><%= link_to "Check out more on Yelp!", result.mobile_url, target: "blank", class: "yelp" %></li>
     <% end %>
+
+    <% if current_user %>
+      <div class="form">
+        <%= form_for [@workout, @favorite] do |f| %>
+          <%= f.hidden_field :user_id %><br />
+          <%= f.hidden_field :workout_id %><br / >
+          <%= f.submit "Add to Favorites", class: "submit" %>
+       <% end %>
+      </div>
+    <% end %>
   </ul>
-  <% end %>
+<% end %>
 
 <span><%= link_to "Back to Results", location_category_workouts_path, class: "back" %></span>
