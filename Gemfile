@@ -23,7 +23,6 @@ group :development, :test do
   gem 'launchy'
   gem 'rspec-rails'
   gem "vcr"
-  gem 'yelp'
 end
 
 group :test do
