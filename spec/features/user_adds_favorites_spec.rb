@@ -27,7 +27,7 @@ feature 'adding favorites' do
 
     expect(page).to have_content(workout.name)
     expect(page).to have_content(workout.street)
-    expect(page).to have_content('Workout has been added to favorites.')
+    expect(page).to have_content('Workout has been added to favorites!')
   end
 
   scenario 'authenticated user cannot add the same workout to favorites more than once' do

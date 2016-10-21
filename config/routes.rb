@@ -7,6 +7,11 @@ Rails.application.routes.draw do
       resources :workouts
     end
   end
+
+  resources :workouts do
+    resources :comments, except: [:index]
+  end
+
   resources :workouts do
     resources :favorites
   end

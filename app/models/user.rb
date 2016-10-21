@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :categories
   has_many :favorites
   has_many :workouts, through: :favorites
+  has_many :comments
 
   validates :first_name, presence: true
   validates :last_name, presence: true

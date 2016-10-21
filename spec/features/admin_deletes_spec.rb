@@ -9,6 +9,7 @@ feature 'admin delete ability', vcr: true do
   let!(:location) { FactoryGirl.create(:location) }
   let!(:category) { FactoryGirl.create(:category) }
   let!(:workout) { Workout.create(name: 'Golds Gym', street: '12 Main St', location_id: location.id, category_id: category.id) }
+  let!(:comment) { Comment.create(body: "Test", workout_id: workout.id, user_id: user.id) }
 
   scenario 'an admin deletes users when desired' do
     visit root_path
@@ -46,6 +47,19 @@ feature 'admin delete ability', vcr: true do
     click_link(workout.name)
 
     expect(page).to have_button("Delete")
+  end
+
+  scenario 'an admin deletes comments when necessary' do
+    visit root_path
+    click_link('Sign In')
+    fill_in 'Email', with: admin.email
+    fill_in 'Password', with: admin.password
+    click_button 'Log in'
+    click_link(location.city)
+    click_link(category.category)
+    click_link(workout.name)
+
+    expect(page).to have_content("Delete Comment")
   end
 
   scenario 'a non-admin cannot deletes workouts' do
