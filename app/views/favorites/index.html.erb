@@ -4,7 +4,6 @@
 
 <ul>
   <% @favorites.each do |fav| %>
-
     <li>
       <%= link_to fav.workout.name, location_category_workout_path(1, fav.workout.category.id, fav.workout.id) %>,
       <%= fav.workout.street %>

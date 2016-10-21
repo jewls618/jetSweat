@@ -15,7 +15,6 @@ feature 'removing favorites' do
     click_link(workout.name)
     click_button("Add to Favorites")
     click_link("Favorite Workouts")
-    save_and_open_page
 
     expect(page).to have_content('Remove')
   end
