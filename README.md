@@ -35,14 +35,15 @@ Ruby version 2.3.1
 
 
 #Features
-- User has ability to signs up and update profile
+- User has ability to sign up and update profile
 - User uploads a profile picture
-- User can pick a location and a type of workout
-- User can view all workouts in that location
-- User can search on the workouts results page
+- User can pick a location and a workout category
+- User can view all workouts in specified location
+- User can search the workouts results page
 - User can save or remove a workout to their favorites
 - User can leave a comment on a workout
 - User can edit or delete their own comments
+- User can checkout the Yelp page for each result from the workouts show page
 - Admin has the ability to delete inappropriate comments, workouts or users
 
 
