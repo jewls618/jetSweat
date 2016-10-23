@@ -1,6 +1,4 @@
-<%= render 'layouts/header' %>
-
-<h1>Favorites</h1>
+<h1 class="add-edit">Favorites</h1>
 
 <ul>
   <% @favorites.each do |fav| %>
@@ -11,3 +9,5 @@
     </li>
   <% end %>
 </ul>
+
+<%= render 'layouts/navbar' %>

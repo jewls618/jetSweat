@@ -22,6 +22,15 @@ a:hover {
 ul {
   list-style: none;
 }
+#footer {
+  border-top: 2px solid #00868b;
+  margin-top: 100px;
+  display; flex;
+  width: 100%;
+}
+ul.footer {
+  width: 100%;
+}
 #navbar ul {
   display: flex;
   justify-content: flex-end;
@@ -31,7 +40,7 @@ ul {
   float: right;
 }
 #navbar ul li {
-  padding: 90px 50px 5px 5px;
+  padding: 0px 50px 5px 5px;
   color: #329ea2;
 }
 li.signed-in {
@@ -103,6 +112,10 @@ img.profile-pic  {
 }
 h1.category {
   text-transform: uppercase;
+  border-bottom: 2px solid #00868b;
+}
+h1.add-edit {
+  border-bottom: 2px solid #00868b;
 }
 p.required {
   color: red;
@@ -119,6 +132,7 @@ p.required {
 }
 h1#workout-name {
   margin-bottom: -5px;
+  border-bottom: 2px solid #00868b;
 }
 h3.comments {
   text-decoration: underline;
@@ -147,7 +161,49 @@ a.add:hover {
   padding: 20px;
 }
 #map {
-  border: 2px solid black;
   width: 400px;
   height: 300px;
+  float: right;
+}
+#all-workouts {
+  width: 50%;
+  height: 500px;
+  display: inline-block;
+  float: left;
+}
+#result-map {
+  width: 40%;
+  height: 500px;
+  display: inline-block;
+  float: right;
+  margin-right: 20px;
+  top: 10px;
+  left: 10px;
+  position: fixed;
+  z-index: 100;
+}
+li.result:hover {
+  border-bottom: 2px solid #ccc;
+  opacity: .75;
+}
+a.cats-back {
+  display: block
+}
+a.back:hover {
+  border-bottom: 2px solid #ccc;
+  opacity: .75;
+}
+nav#footer {
+  clear: both;
+  width: 100%;
+  position: static;
+}
+div#wrapper {
+  height: 500px;
+  overflow: scroll;
+  position: flex;
+}
+li.account:hover {
+  border-bottom: 2px solid #ccc;
+  opacity: .75;
 }
