@@ -34,6 +34,10 @@
   </ul>
 <% end %>
 
+<div id='map' style='width: 400px; height: 300px;'>
+<%= render 'layouts/map' %>
+</div>
+
 <h3 class="comments">COMMENTS</h3>
 
 <span><%= link_to 'Add New Comment', new_workout_comment_path(@workout.id), class: "comm" %></span><br />

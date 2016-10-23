@@ -21,12 +21,13 @@ Ruby version 2.3.1
 
 #Technologies Utilized
 - Ruby on Rails
-- Google API
+- Javascript 
+- Google Places API
+- Google Maps API
 - Yelp API
-- MapBox for maps
 - Heroku for hosting
 - Codeship for continuous integration and deployment
-- Bootstrap and Foundations for styling
+- CSS & Foundations for styling
 - Ajax
 - JQuery
 - Devise for User Authentication

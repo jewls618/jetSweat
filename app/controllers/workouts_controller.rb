@@ -2,11 +2,10 @@ class WorkoutsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
+    all_workouts
+    geojson
     @location = Location.find(params[:location_id])
     @category = Category.find(params[:category_id])
-    @workouts = get_google_data(@category.category, @location.city)
-    @workout = new_workout(@workouts, @location.id, @category.id)
-    @all_workouts = Workout.all.where(location_id: @location.id, category_id: @category.id)
 
     if params[:search].present?
       @all_workouts = @location.workouts.where(category: @category).search(params[:search])
@@ -94,8 +93,43 @@ class WorkoutsController < ApplicationController
   def new_workout(workout, location, category)
     workout_objects = []
     workout["results"].each do |w|
-      workout_objects << Workout.find_or_create_by(name: w["name"], street: w["formatted_address"], location_id: location, category_id: category)
+      workout_objects << Workout.find_or_create_by(name: w["name"], street: w["formatted_address"], latitude: w["geometry"]["location"]["lat"], longitude: w["geometry"]["location"]["lng"], location_id: location, category_id: category)
     end
     return workout_objects
+  end
+
+  def all_workouts
+    @location = Location.find(params[:location_id])
+    @category = Category.find(params[:category_id])
+    @workouts = get_google_data(@category.category, @location.city)
+    @workout = new_workout(@workouts, @location.id, @category.id)
+    @all_workouts = Workout.all.where(location_id: @location.id, category_id: @category.id)
+  end
+
+  def geojson
+    @geojson = Array.new
+
+    all_workouts.each do |workout|
+      @geojson << {
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [workout.longitude, workout.latitude]
+        },
+        properties: {
+          name: workout.name,
+          address: workout.street,
+          :'marker-color' => '#00607d',
+          :'marker-symbol' => 'circle',
+          :'marker-size' => 'medium'
+        }
+      }
+    end
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @geojson }
+    end
+    return @geojson
   end
 end
