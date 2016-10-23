@@ -3,9 +3,7 @@ class WorkoutsController < ApplicationController
 
   def index
     all_workouts
-    geojson
-    @location = Location.find(params[:location_id])
-    @category = Category.find(params[:category_id])
+    @google_results = google_maps_array
 
     if params[:search].present?
       @all_workouts = @location.workouts.where(category: @category).search(params[:search])
@@ -106,30 +104,19 @@ class WorkoutsController < ApplicationController
     @all_workouts = Workout.all.where(location_id: @location.id, category_id: @category.id)
   end
 
-  def geojson
-    @geojson = Array.new
+  def google_maps_array
+    @google_maps_array = Array.new
+    all_workouts
 
-    all_workouts.each do |workout|
-      @geojson << {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [workout.longitude, workout.latitude]
-        },
-        properties: {
-          name: workout.name,
-          address: workout.street,
-          :'marker-color' => '#00607d',
-          :'marker-symbol' => 'circle',
-          :'marker-size' => 'medium'
+    @workout.each do |workout|
+      @google_maps_array << {
+        title: workout.name,
+        location: {
+          lat: workout.latitude.to_f,
+          lng: workout.longitude.to_f
         }
       }
     end
-
-    respond_to do |format|
-      format.html
-      format.json { render json: @geojson }
-    end
-    return @geojson
+    return @google_maps_array
   end
 end
