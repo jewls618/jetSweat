@@ -9,7 +9,7 @@
 austin = Location.create(city: "Austin, TX", photo: "http://www.meekrealty.net/wp-content/uploads/2012/08/Austin-downtown.jpg")
 boston = Location.create(city: "Boston, MA", photo: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ94nnvhgph4syJ7FqRQow0MVw-dLt4MeJwjzG0X1DaNgchlghf")
 chicago = Location.create(city: "Chicago, IL", photo: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSlInbaOueLevf3MhUJDGaI05i8KuMWQ3u6sbDQQ_b7_57NZbxXhw")
-denver = Location.create(city: "Denver, CO", photo: "https://lonelyplanetimages.imgix.net/a/g/hi/t/1da32e09c1497a907cda4479049e6b2b-denver.jpg?sharp=10&vib=20&w=1200")
+denver = Location.create(city: "Denver, CO", photo: "http://marketingvisible.com/wp-content/uploads/2016/02/denver-colorado.jpg")
 houston = Location.create(city: "Houston, TX", photo: "http://professionalcaretakers.com/wp-content/uploads/2014/09/HoustonSkyline.jpg")
 lost_angeles = Location.create(city: "Los Angeles, CA", photo: "http://eskipaper.com/images/la-skyline-3.jpg")
 miami = Location.create(city: "Miami, FL", photo: "http://foodtruckempire.com/wp-content/uploads/mia.jpg")
