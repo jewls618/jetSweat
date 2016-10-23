@@ -36,5 +36,11 @@
   <% end %>
 </ul>
 
+<div id='result-map' style='width: 400px; height: 300px;'>
+<%= render 'layouts/resultsmap' %>
+</div>
+
+<br /><br />
+
 <span>  <%= link_to "Back to Categories", location_categories_path(@location.id), class: "back" %>
 </span>
