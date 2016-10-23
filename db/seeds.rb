@@ -24,6 +24,6 @@ crossfit = Category.create(category: "Crossfit", photo: "https://prod-academy-wp
 gym = Category.create(category: "Gyms", photo: "http://luxurylaunches.com/wp-content/uploads/2014/09/peninsula-shanghai-gym.jpg")
 hike = Category.create(category: "Hikes", photo: "https://partners.novascotia.com/sites/default/files/CBHNP%20Skyline%20Sunset%20Hike.jpg")
 rock_climbing = Category.create(category: "Rock Climbing", photo: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ6YxChOQt04SRPtb00EFDSG3YP0IgmzYKEaHksqCQK2PFRi29D")
-run = Category.create(category: "Runs", photo: "http://discover.sap.com/content/dam/digitalhub/desktopimages/Best-run-city_276360_h_ergb_s_gl_1920x1280.jpg")
+run = Category.create(category: "Boxing", photo: "https://www.recordedfuture.com/assets/red-boxing-gloves-hanging-770x513.jpg")
 spin = Category.create(category: "Spin Class", photo: "http://www.teammpi.com/images/downloads/images/aldred-spinning-bikes.jpg")
 swim = Category.create(category: "Swimming Pools", photo: "https://www.teamunify.com/amsasc/_images/cust_bg_3643_1440216355832.jpg")
