@@ -1,21 +1,19 @@
-<div id="map"></div>
 <script>
-
-  function initMap() {
-    var myLatLng = {lat: -25.363, lng: 131.044};
-
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 4,
-      center: myLatLng
-    });
+  function myMap() {
+    var mapCanvas = document.getElementById("map");
+    var mapOptions = {
+      center: new google.maps.LatLng(<%= @workout.latitude %>, <%= @workout.longitude %>),
+      zoom: 12
+    }
+    var map = new google.maps.Map(mapCanvas, mapOptions);
 
     var marker = new google.maps.Marker({
-      position: myLatLng,
+      position: {lat: <%= @workout.latitude %>, lng: <%= @workout.longitude %>},
       map: map,
-      title: 'Hello World!'
+      title: '<%= @workout.name %>'
     });
+    marker.setMap(map);
   }
 </script>
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB889X3aSeGkJCFzO3i6inz6SWOynZczDU&callback=initMap">
-</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB889X3aSeGkJCFzO3i6inz6SWOynZczDU&callback=myMap"></script>
