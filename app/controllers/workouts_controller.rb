@@ -106,8 +106,9 @@ class WorkoutsController < ApplicationController
 
   def google_maps_array
     @google_maps_array = Array.new
+    all_workouts
 
-    all_workouts.each do |workout|
+    @workout.each do |workout|
       @google_maps_array << {
         title: workout.name,
         location: {
