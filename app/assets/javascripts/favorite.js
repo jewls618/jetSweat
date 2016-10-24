@@ -4,7 +4,6 @@ $(document).ready(function() {
     event.preventDefault();
 
     var workout = $("#favorite_workout_id").val()
-    debugger;
     var fav_request = $.ajax({
       url: '/favorites.json',
       method: "POST",
@@ -12,7 +11,7 @@ $(document).ready(function() {
     })
 
     fav_request.done(function(){
-      alert("dope");
+      $('.flash').html("Workout has been added to favorites!")
     })
   });
 });

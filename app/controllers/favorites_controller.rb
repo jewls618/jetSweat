@@ -13,27 +13,15 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    # @favorite = Favorite.new(fav_params)
     @workout = Workout.find(params[:workout_id])
     @user = current_user
-    #
-    # @favorite.workout_id = @workout.id
-    # @favorite.user_id = @user.id
 
     @favorite = Favorite.new(user: @user, workout: @workout)
-
-    # if @favorite.save
-    #   flash[:notice] = "Workout has been added to favorites!"
-    #   redirect_back fallback_location: :back
-    # else
-    #   flash[:notice] = "Workout is already a favorite."
-    #   redirect_back fallback_location: :back
-    # end
 
     respond_to do |format|
       if @favorite.save
         format.html { redirect_back fallback_location: :back, notice: 'Workout has been added to favorites!' }
-        format.json { render json: :back }
+        format.json { render json: :back}
       else
         flash[:notice] = "Workout is already a favorite."
         redirect_back fallback_location: :back

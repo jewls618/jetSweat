@@ -2,7 +2,7 @@
   <div id="fav-form">
     <%= form_for [@workout, @favorite] do |f| %>
       <%= f.hidden_field :workout_id, value: @workout.id %>
-      <%= f.submit "Add to Favorites", class: "fav-form" %>
+      <%= f.submit "Add to Favorites", class: "fav-butt" %>
    <% end %>
   </div>
 <% end %>
