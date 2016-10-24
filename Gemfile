@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'dotenv-rails'
 gem 'yelp'
 gem 'json'
+gem 'foundation-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
