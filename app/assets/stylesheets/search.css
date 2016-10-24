@@ -43,3 +43,23 @@ p.city {
 .search {
   text-align: right;
 }
+@media (max-width: 700px) {
+  p {
+    margin-top: -20px;
+    font-size: 1.5rem;
+    color: #00868b;
+    margin-top: 15px;
+  }
+  .jetAway {
+    font-size: 0.8rem;
+    border: 1px solid #A7A2A2;
+  }
+  .placeholder {
+    font-size: 0.8rem;
+    padding: 2px;
+    text-align: center;
+  }
+  input#location_city.placeholder {
+    border: 1px solid #A7A2A2;
+  }
+}
