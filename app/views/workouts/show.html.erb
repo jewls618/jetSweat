@@ -19,6 +19,7 @@
     <button type="button"><%= link_to 'Delete Workout', location_category_workout_path(@location.id, @category.id, @workout.id), method: :delete %></button>
   <% end %>
 <% end %>
+<div id="mobile">
 <div class="content">
   <h4>Address: <%= @workout.street%></h4>
 
@@ -36,7 +37,7 @@
 <div id='map'>
 <%= render 'layouts/map' %>
 </div>
-
+</div>
 <br /><br /><br />
 
 <h3 class="comments">COMMENTS</h3>
