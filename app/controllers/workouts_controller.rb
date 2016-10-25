@@ -111,6 +111,9 @@ class WorkoutsController < ApplicationController
     @workout.each do |workout|
       @google_maps_array << {
         title: workout.name,
+        id: workout.id,
+        cat_id: workout.category.id,
+        loc_id: workout.location.id,
         location: {
           lat: workout.latitude.to_f,
           lng: workout.longitude.to_f
