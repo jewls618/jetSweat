@@ -18,24 +18,25 @@
     <button type="button"><%= link_to 'Delete Workout', location_category_workout_path(@location.id, @category.id, @workout.id), method: :delete %></button>
   <% end %>
 <% end %>
+
 <div id="mobile">
-<div class="content">
-  <h4>Address: <%= @workout.street%></h4>
+  <div class="content">
+    <h4>Address: <%= @workout.street%></h4>
 
-  <% if @yelp_data %>
-    <ul>
-      <% @yelp_data.businesses.each do |result| %>
-        <li>Phone: <%= result.display_phone %></li>
-        <li>Yelp Rating: <%= result.rating %> / 5</li>
-        <li><%= link_to "Check out more on Yelp!", result.mobile_url, target: "blank", class: "yelp" %></li>
-      <% end %>
-    </ul>
-  <% end %>
-</div>
+    <% if @yelp_data %>
+      <ul>
+        <% @yelp_data.businesses.each do |result| %>
+          <li>Phone: <%= result.display_phone %></li>
+          <li>Yelp Rating: <%= result.rating %> / 5</li>
+          <li><%= link_to "Check out more on Yelp!", result.mobile_url, target: "blank", class: "yelp" %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
 
-<div id='map'>
-<%= render 'layouts/map' %>
-</div>
+  <div id='map'>
+    <%= render 'layouts/map' %>
+  </div>
 </div>
 <br /><br /><br />
 
