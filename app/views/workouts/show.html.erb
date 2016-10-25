@@ -7,7 +7,17 @@
   </div>
 <% end %>
 
-<h1 id="workout-name"><%= @workout.name %></h1>
+<h1 id="workout-name"><a href="<%= @place_details["result"]["website"] %>", target="blank" class="business-name"><%= @workout.name %></a></h1><br />
+<% if @place_details["result"]["website"] %>
+  <%= link_to "Go to site", @place_details["result"]["website"], target: "blank", class: "site"%><br />
+<% end %>
+
+<% if @yelp_data %>
+  <% @yelp_data.businesses.each do |result| %>
+    <span><%= link_to "Check out more on Yelp!", result.mobile_url, target: "blank", class: "yelp" %></span><br />
+    <span>Rating: <%= result.rating %> / 5</span>
+  <% end %>
+<% end %>
 
 <% if current_user %>
   <% if current_user.admin? %>
@@ -19,26 +29,42 @@
   <% end %>
 <% end %>
 
-<div id="mobile">
-  <div class="content">
-    <h4>Address: <%= @workout.street%></h4>
+<h4 class="address">Address: <%= @workout.street%></h4>
 
-    <% if @yelp_data %>
-      <ul>
-        <% @yelp_data.businesses.each do |result| %>
-          <li>Phone: <%= result.display_phone %></li>
-          <li>Yelp Rating: <%= result.rating %> / 5</li>
-          <li><%= link_to "Check out more on Yelp!", result.mobile_url, target: "blank", class: "yelp" %></li>
-        <% end %>
-      </ul>
-    <% end %>
-  </div>
-
-  <div id='map'>
-    <%= render 'layouts/map' %>
-  </div>
+<div id='map'>
+  <%= render 'layouts/map' %>
 </div>
-<br /><br /><br />
+
+<div class="places_info">
+  <% if @place_details["result"]["formatted_phone_number"] %>
+    <span class="phone">Phone: <%= @place_details["result"]["formatted_phone_number"] %></span><br /><br />
+  <% end %>
+    <% if @place_details["result"]["opening_hours"] %>
+      <span class="hours-header">BUSINESS HOURS:</span><br />
+      <span class="hours"><% @place_details["result"]["opening_hours"]["weekday_text"].each do |d| %>
+      <%= d %><br /></span>
+    <% end %>
+  <% end %>
+</div>
+
+<br />
+
+<img src="<%= @uri %>", class="logo-pic">
+
+<br />
+
+<div class="comment">
+<h3 class="comments">GOOGLE REVIEWS</h3>
+  <% @reviews.each do |review| %>
+    <ul>
+      <li class="body"><%= review["text"] %><br />
+        <span class="rating">Rating: <%= review["rating"] %></span>
+      </li>
+      <li class="reviewer">-<%= review["author_name"] %></li>
+    </ul>
+  <% end %>
+</div>
+<br />
 
 <h3 class="comments">COMMENTS</h3>
 

@@ -21,8 +21,10 @@ Ruby version 2.3.1
 
 #Technologies Utilized
 - Ruby on Rails
-- Javascript 
+- Javascript
 - Google Places API
+- Google Place Details API
+- Google Place Photos API
 - Google Maps API
 - Yelp API
 - Heroku for hosting

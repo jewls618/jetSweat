@@ -17,6 +17,7 @@ class WorkoutsController < ApplicationController
     @favorite = Favorite.new
     @comment = Comment.new
     @comments = @workout.comments
+    @place_id = @workout.place_id
 
     params = {
       term: @workout.name,
@@ -24,6 +25,16 @@ class WorkoutsController < ApplicationController
       limit: 1
     }
     @yelp_data = Yelp.client.search(@workout.street, params)
+
+    uri = URI("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{@place_id}&key=#{ENV['GOOGLE_PLACES_DETAILS_API']}")
+    response = Net::HTTP.get_response(uri)
+    @place_details = JSON.parse(response.body)
+    @reviews = @place_details["result"]["reviews"]
+
+    if @place_details["result"]["photos"]
+      @picture_reference = @place_details["result"]["photos"][0]["photo_reference"]
+      @uri = URI("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{@picture_reference}&key=#{ENV['GOOGLE_PLACES_PHOTOS_API']}")
+    end
   end
 
   def new

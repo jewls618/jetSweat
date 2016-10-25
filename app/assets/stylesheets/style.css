@@ -172,6 +172,7 @@ a.add:hover {
   height: 260px;
   float: right;
   margin: -120px 50px 0px 0px;
+  padding-top: 50px;
 }
 #all-workouts {
   width: 50%;
