@@ -31,14 +31,13 @@
   <div id="mainContent">
     <ol>
       <% @all_workouts.each do |w| %>
-      <li class="result">
+      <li class="result" id="<%= w.id %>">
         <%= link_to w.name, location_category_workout_path(@location.id, @category.id, w.id) %>
         <br />
         <%= w.street %>
       </li><br />
       <% end %>
     </ul>
-
     <br / ><br />
   </div>
 </div>

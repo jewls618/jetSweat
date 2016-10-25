@@ -228,34 +228,36 @@
     });
 
     var locations = <%= @google_results.to_json.html_safe %>;
-
     var largeInfowindow = new google.maps.InfoWindow();
     var bounds = new google.maps.LatLngBounds();
     for (var i = 0; i < locations.length; i++) {
       var position = locations[i].location;
       var title = locations[i].title;
+      var workout_id = locations[i].id;
+      var location_id = locations[i].loc_id;
+      var category_id = locations[i].cat_id;
       var marker = new google.maps.Marker({
         map: map,
         position: position,
         title: title,
         icon:'https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld='+ ( i     + 1) +'|FF776B|000000',
         animation: google.maps.Animation.DROP,
-        id: i
+        id: workout_id
       });
 
       markers.push(marker);
       marker.addListener('click', function() {
-        populateInfoWindow(this, largeInfowindow);
+        populateInfoWindow(this, largeInfowindow, category_id, location_id);
       });
       bounds.extend(markers[i].position);
     }
     map.fitBounds(bounds);
   }
 
-  function populateInfoWindow(marker, infowindow) {
+  function populateInfoWindow(marker, infowindow, category, location) {
     if (infowindow.marker != marker) {
       infowindow.marker = marker;
-      infowindow.setContent('<div>' + marker.title + '</div>');
+      infowindow.setContent("<div><a href='/locations/" + location + "/categories/" + category + "/workouts/" + marker.id + "'>" + marker.title + "</div>");
       infowindow.open(map, marker);
 
       infowindow.addListener('closeclick',function(){
