@@ -91,7 +91,7 @@ class WorkoutsController < ApplicationController
   def new_workout(workout, location, category)
     workout_objects = []
     workout["results"].each do |w|
-      workout_objects << Workout.find_or_create_by(name: w["name"], street: w["formatted_address"], latitude: w["geometry"]["location"]["lat"], longitude: w["geometry"]["location"]["lng"], location_id: location, category_id: category)
+      workout_objects << Workout.find_or_create_by(name: w["name"], street: w["formatted_address"], latitude: w["geometry"]["location"]["lat"], longitude: w["geometry"]["location"]["lng"], location_id: location, category_id: category, place_id: w["place_id"] )
     end
     return workout_objects
   end
