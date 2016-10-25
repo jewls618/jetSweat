@@ -26,16 +26,22 @@ class WorkoutsController < ApplicationController
     }
     @yelp_data = Yelp.client.search(@workout.street, params)
 
-    uri = URI("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{@place_id}&key=#{ENV['GOOGLE_PLACES_DETAILS_API']}")
-    response = Net::HTTP.get_response(uri)
-    @place_details = JSON.parse(response.body)
-    @reviews = @place_details["result"]["reviews"]
+    if @place_id
+      uri = URI("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{@place_id}&key=#{ENV['GOOGLE_PLACES_DETAILS_API']}")
+      response = Net::HTTP.get_response(uri)
+      @place_details = JSON.parse(response.body)
+
+      if @place_details["result"]["reviews"]
+        @reviews = @place_details["result"]["reviews"]
+      end
+
 
     if @place_details["result"]["photos"]
       @picture_reference = @place_details["result"]["photos"][0]["photo_reference"]
       @uri = URI("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{@picture_reference}&key=#{ENV['GOOGLE_PLACES_PHOTOS_API']}")
     end
   end
+      end
 
   def new
     @workout = Workout.new

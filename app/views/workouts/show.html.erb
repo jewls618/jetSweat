@@ -7,9 +7,13 @@
   </div>
 <% end %>
 
-<h1 id="workout-name"><a href="<%= @place_details["result"]["website"] %>", target="blank" class="business-name"><%= @workout.name %></a></h1><br />
-<% if @place_details["result"]["website"] %>
-  <%= link_to "Go to site", @place_details["result"]["website"], target: "blank", class: "site"%><br />
+<% if @place_id %>
+  <h1 id="workout-name"><a href="<%= @place_details["result"]["website"] %>", target="blank" class="business-name"><%= @workout.name %></a></h1><br />
+  <% if @place_details["result"]["website"] %>
+    <%= link_to "Go to site", @place_details["result"]["website"], target: "blank", class: "site"%><br />
+  <% end %>
+  <% else %>
+  <h1 id="workout-name"><%= @workout.name %></h1>
 <% end %>
 
 <% if @yelp_data %>
@@ -35,17 +39,19 @@
   <%= render 'layouts/map' %>
 </div>
 
-<div class="places_info">
-  <% if @place_details["result"]["formatted_phone_number"] %>
-    <span class="phone">Phone: <%= @place_details["result"]["formatted_phone_number"] %></span><br /><br />
-  <% end %>
-    <% if @place_details["result"]["opening_hours"] %>
-      <span class="hours-header">BUSINESS HOURS:</span><br />
-      <span class="hours"><% @place_details["result"]["opening_hours"]["weekday_text"].each do |d| %>
-      <%= d %><br /></span>
+<% if @place_id %>
+  <div class="places_info">
+    <% if @place_details["result"]["formatted_phone_number"] %>
+      <span class="phone">Phone: <%= @place_details["result"]["formatted_phone_number"] %></span><br /><br />
     <% end %>
-  <% end %>
-</div>
+      <% if @place_details["result"]["opening_hours"] %>
+        <span class="hours-header">BUSINESS HOURS:</span><br />
+        <span class="hours"><% @place_details["result"]["opening_hours"]["weekday_text"].each do |d| %>
+        <%= d %><br /></span>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
 
 <br />
 
@@ -53,17 +59,19 @@
 
 <br />
 
-<div class="comment">
-<h3 class="comments">GOOGLE REVIEWS</h3>
-  <% @reviews.each do |review| %>
-    <ul>
-      <li class="body"><%= review["text"] %><br />
-        <span class="rating">Rating: <%= review["rating"] %></span>
-      </li>
-      <li class="reviewer">-<%= review["author_name"] %></li>
-    </ul>
-  <% end %>
-</div>
+<% if @place_id %>
+  <div class="comment">
+  <h3 class="comments">GOOGLE REVIEWS</h3>
+    <% @reviews.each do |review| %>
+      <ul>
+        <li class="body"><%= review["text"] %><br />
+          <span class="rating">Rating: <%= review["rating"] %></span>
+        </li>
+        <li class="reviewer">-<%= review["author_name"] %></li>
+      </ul>
+    <% end %>
+  </div>
+<% end %>
 <br />
 
 <h3 class="comments">COMMENTS</h3>
