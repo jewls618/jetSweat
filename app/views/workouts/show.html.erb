@@ -61,14 +61,16 @@
 
 <% if @place_id %>
   <div class="comment">
-  <h3 class="comments">GOOGLE REVIEWS</h3>
-    <% @reviews.each do |review| %>
-      <ul>
-        <li class="body"><%= review["text"] %><br />
-          <span class="rating">Rating: <%= review["rating"] %></span>
-        </li>
-        <li class="reviewer">-<%= review["author_name"] %></li>
-      </ul>
+  <% if !@reviews.nil? %>
+    <h3 class="comments">GOOGLE REVIEWS</h3>
+      <% @reviews.each do |review| %>
+        <ul>
+          <li class="body"><%= review["text"] %><br />
+            <span class="rating">Rating: <%= review["rating"] %></span>
+          </li>
+          <li class="reviewer">-<%= review["author_name"] %></li>
+        </ul>
+      <% end %>
     <% end %>
   </div>
 <% end %>
