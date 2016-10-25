@@ -14,9 +14,17 @@ body {
 }
 a {
   text-decoration: none;
-  color: white;
 }
 a:hover {
+  color: #00868b;
+}
+a#jet {
+  color: white;
+}
+a#jet:hover {
+  color: #00868b;
+}
+a.result {
   color: #00868b;
 }
 ul {
