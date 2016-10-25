@@ -181,13 +181,14 @@ a.add:hover {
 }
 #result-map {
   width: 40%;
-  height: 500px;
+  height: 600px;
   display: inline-block;
   float: right;
   margin-right: 20px;
   top: 10px;
   left: 10px;
   position: fixed;
+  margin-right: 75px;
 }
 li.result:hover {
   border-bottom: 2px solid #ccc;
@@ -207,9 +208,10 @@ nav#footer {
   position: static;
 }
 div#wrapper {
-  height: 500px;
+  height: 800px;
   overflow: scroll;
   position: flex;
+  padding-left: 50px;
 }
 li.account:hover {
   border-bottom: 2px solid #ccc;
