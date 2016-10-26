@@ -54,6 +54,8 @@ Ruby version 2.3.1
 
 ### Viewing in the browser
 - Clone the repository `git clone https://github.com/jewls618/jetSweat.git`
+- Open the .env.example file, rename file as .env
+- Retrieve all necessary API keys
 - Bundle install `bundle`
 - Create `rake db:create`
 - Migrate `rake db:migrate`
