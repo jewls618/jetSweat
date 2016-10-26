@@ -3,7 +3,13 @@
   width: 100%;
 }
 #searchsubmit {
-  font-size: 50px;
+  font-size: 25px;
+}
+input#search {
+  font-size: 1rem;
+}
+input {
+  font-size: 1rem;
 }
 p {
   margin-top: -20px;
@@ -24,7 +30,7 @@ p.city {
   padding-bottom: 20px;
 }
 .jetAway {
-  font-size: 1.4rem;
+  font-size: 1rem;
 }
 .placeholder {
   font-size: 1.2rem;

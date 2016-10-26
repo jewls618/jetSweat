@@ -7,99 +7,144 @@
   </div>
 <% end %>
 
-<% if @place_id %>
-  <h1 id="workout-name"><a href="<%= @place_details["result"]["website"] %>", target="blank" class="business-name"><%= @workout.name %></a></h1><br />
-  <% if @place_details["result"]["website"] %>
-    <%= link_to "Go to site", @place_details["result"]["website"], target: "blank", class: "site"%><br />
-  <% end %>
-  <% else %>
-  <h1 id="workout-name"><%= @workout.name %></h1>
-<% end %>
-
-<% if @yelp_data %>
-  <% @yelp_data.businesses.each do |result| %>
-    <span><%= link_to "Check out more on Yelp!", result.mobile_url, target: "blank", class: "yelp" %></span><br />
-    <span>Rating: <%= result.rating %> / 5</span>
-  <% end %>
-<% end %>
-
-<% if current_user %>
-  <% if current_user.admin? %>
-    <button type="button"><%= link_to 'Edit Workout', edit_location_category_workout_path(@location.id, @category.id, @workout.id) %></button>
-  <% end %>
-
-  <% if current_user.admin? %>
-    <button type="button"><%= link_to 'Delete Workout', location_category_workout_path(@location.id, @category.id, @workout.id), method: :delete %></button>
-  <% end %>
-<% end %>
-
-<h4 class="address">Address: <%= @workout.street%></h4>
-
-<div id='map'>
-  <%= render 'layouts/map' %>
+<div class="row">
+  <div class="small-12 column yelp">
+    <% if @place_id %>
+      <% if @place_details["result"]["website"] %>
+        <%= link_to "Go to site", @place_details["result"]["website"], target: "blank", class: "site" %><br />
+        <% if @yelp_data %>
+          <% @yelp_data.businesses.each do |result| %>
+            <span><%= link_to "Check out Yelp!", result.mobile_url, target: "blank", class: "yelp" %></span><br />
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
 
-<% if @place_id %>
-  <div class="places_info">
-    <% if @place_details["result"]["formatted_phone_number"] %>
-      <span class="phone">Phone: <%= @place_details["result"]["formatted_phone_number"] %></span><br /><br />
-    <% end %>
-      <% if @place_details["result"]["opening_hours"] %>
-        <span class="hours-header">BUSINESS HOURS:</span><br />
-        <span class="hours"><% @place_details["result"]["opening_hours"]["weekday_text"].each do |d| %>
-        <%= d %><br /></span>
-      <% end %>
-    <% end %>
-  </div>
-<% end %>
-
-<br />
-
-<img src="<%= @uri %>", class="logo-pic">
-
-<br />
-
-<% if @place_id %>
-  <div class="comment">
-  <% if !@reviews.nil? %>
-    <h3 class="comments">GOOGLE REVIEWS</h3>
-      <% @reviews.each do |review| %>
-        <ul>
-          <li class="body"><%= review["text"] %><br />
-            <span class="rating">Rating: <%= review["rating"] %></span>
-          </li>
-          <li class="reviewer">-<%= review["author_name"] %></li>
-        </ul>
-      <% end %>
-    <% end %>
-  </div>
-<% end %>
-<br />
-
-<h3 class="comments">COMMENTS</h3>
-
-<span><%= link_to 'Add New Comment', new_workout_comment_path(@workout.id), class: "comm" %></span><br />
-<br />
-
-<ul>
-  <div class="comment">
-    <% @comments.each do |c| %>
-      <li class="body"><%= c.body %></li>
-      <li class="reviewer">-<%= c.user.username %>
-        <div class="options">
-          <% if current_user %>
-            <% if current_user.id == c.user_id %>
-            <button type="button"><%= link_to 'Edit Comment', edit_workout_comment_path(@workout, c), class: "button", id: "edit-workout-review-button" %></button>
-            <% end %>
-            <% if current_user.id == c.user_id || current_user.admin? %>
-              <button type="button"><%= link_to 'Delete Comment', workout_comment_path(@workout.id, c), method: :delete %></button>
-            <% end %>
+<div class="row">
+  <div class="small-12 columns">
+    <% if @place_id %>
+      <h1 id="workout-name"><a href="<%= @place_details["result"]["website"] %>", target="blank" class="business-name"><%= @workout.name %></a>
+        <% if @uri %>
+          <img src="<%= @uri %>", class="logo-pic">
+        <% end %>
+      </h1>
+      <h4 class="address"><%= @workout.street%></h4>
+      <% if @place_id %>
+        <div class="places_info">
+          <% if @place_details["result"]["formatted_phone_number"] %>
+            <span class="phone">Phone: <%= @place_details["result"]["formatted_phone_number"] %></span><br /><br />
           <% end %>
         </div>
-      </li>
+      <% end %>
+      <% else %>
+      <h1 id="workout-name"><%= @workout.name %></h1>
+      <h4 class="address"><%= @workout.street%></h4>
+      <% if @place_id %>
+        <div class="places_info">
+          <% if @place_details["result"]["formatted_phone_number"] %>
+            <span class="phone">Phone: <%= @place_details["result"]["formatted_phone_number"] %></span><br /><br />
+          <% end %>
+        </div>
+      <% end %>
     <% end %>
   </div>
-</ul>
+</div>
+
+<div class="row">
+  <div class="small-12 columns" id='map'>
+    <%= render 'layouts/map' %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+    <% if current_user %>
+      <% if current_user.admin? %>
+        <button type="button"><%= link_to 'Edit Workout', edit_location_category_workout_path(@location.id, @category.id, @workout.id) %></button>
+      <% end %>
+      <% if current_user.admin? %>
+        <button type="button"><%= link_to 'Delete Workout', location_category_workout_path(@location.id, @category.id, @workout.id), method: :delete %></button>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<br />
+<br />
+
+<div class="row">
+  <div class="small-12 medium-6 columns">
+    <% if @place_id %>
+      <div class="places_info">
+        <% if @place_details["result"]["opening_hours"] %>
+          <span class="hours-header">BUSINESS HOURS:</span><br />
+          <span class="hours"><% @place_details["result"]["opening_hours"]["weekday_text"].each do |d| %>
+          <%= d %><br /></span>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<br />
+<br />
+
+<div class="row">
+  <div class="small-12 columns">
+    <% if @yelp_data %>
+      <% @yelp_data.businesses.each do |result| %>
+        <span>Rating: <%= result.rating %> / 5</span>
+      <% end %>
+    <% end %>
+    <br />
+    <% if @place_id %>
+      <div class="comment">
+      <% if !@reviews.nil? %>
+        <h3 class="comments">GOOGLE REVIEWS</h3>
+          <% @reviews.each do |review| %>
+            <ul>
+              <li class="body">"<%= review["text"] %>"<br /><br />
+                <span class="rating">Rating: <%= review["rating"] %></span>
+              </li>
+              <li class="reviewer">-<%= review["author_name"] %></li>
+            </ul>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<br />
+
+<div class="row">
+  <div class="medium-12 columns">
+    <h3 class="comments">COMMENTS</h3>
+    <span><%= link_to 'Add New Comment', new_workout_comment_path(@workout.id), class: "comm" %></span><br />
+    <br />
+    <ul>
+      <div class="comment">
+        <% @comments.each do |c| %>
+          <li class="body">"<%= c.body %>"</li>
+          <li class="reviewer">-<%= c.user.username %>
+            <div class="options">
+              <% if current_user %>
+                <% if current_user.id == c.user_id %>
+                <button type="button"><%= link_to 'Edit Comment', edit_workout_comment_path(@workout, c), class: "button", id: "edit-workout-review-button" %></button>
+                <% end %>
+                <% if current_user.id == c.user_id || current_user.admin? %>
+                  <button type="button"><%= link_to 'Delete Comment', workout_comment_path(@workout.id, c), class: "button", method: :delete %></button>
+                <% end %>
+              <% end %>
+            </div>
+          </li>
+        <% end %>
+      </div>
+    </ul>
+  </div>
+</div>
 <br />
 
 <span><%= link_to "Back to Results", location_category_workouts_path, class: "back" %></span>

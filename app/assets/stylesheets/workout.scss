@@ -1,0 +1,50 @@
+a.business-name {
+  text-decoration: none;
+  color: black;
+}
+a.business-name:hover {
+  color: #00868b;
+}
+a.site {
+  text-decoration: none;
+  color: black;
+}
+a.site:hover {
+  color: grey;
+}
+span.hours-header {
+  text-decoration: underline;
+}
+h4.address {
+  color: #478D92;
+}
+img.logo-pic {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+}
+.yelp {
+  float: right;
+}
+.site {
+  float: right;
+}
+#map {
+  padding: 10px 15px;
+}
+li.reviewer {
+  font-style: italic
+}
+@media (max-width: 700px) {
+  div#map {
+    width: 350px;
+    height: 250px;
+  }
+  img.logo-pic {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+  }
+}

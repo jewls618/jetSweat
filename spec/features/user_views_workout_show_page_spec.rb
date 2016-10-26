@@ -46,10 +46,4 @@ feature 'viewing workout show page', vcr: true do
     expect(page).to have_content(comment.body)
     expect(page).to have_content(comment.user.username)
   end
-
-  scenario 'any user can view workout picture if provided by google' do
-    visit "/locations/#{location.id}/categories/#{category.id}/workouts/#{workout.id}"
-
-    expect(page).to have_css('img.logo-pic')
-  end
 end

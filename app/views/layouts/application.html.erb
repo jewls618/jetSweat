@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>jetSweat</title>
-    <%= csrf_meta_tags %>
+<head>
+     <title>jetSweat</title>
+     <meta charset="utf-8" />
+     <%= csrf_meta_tags %>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <%= stylesheet_link_tag    'application', media: 'all' %>
+     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+     <%= javascript_include_tag 'application' %>
+     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Nunito|Oswald" rel="stylesheet">
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito|Oswald" rel="stylesheet">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <%= stylesheet_link_tag    "application" %>
+     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+     <%= csrf_meta_tags %>
+</head>
 
   <body>
     <div class="flash">
