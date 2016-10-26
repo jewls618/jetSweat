@@ -1,0 +1,52 @@
+#new_user,
+#edit_user,
+#new_workout,
+#new_comment
+ {
+  text-align: left;
+  label {
+    font-size: .8em;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    letter-spacing: 1.13px;
+  }
+  input[type="text"], input[type="email"], input[type="password"],
+  textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 5px;
+  }
+  input[type="text"], input[type="email"], input[type="password"], {
+    border: none;
+    border-bottom: 1px solid #ccc;
+  }
+  textarea {
+    margin-top: 7px;
+    border: 1px solid #ccc;
+    height: 90px;
+  }
+  input#district_avatar {
+    padding: 10px 0;
+  }
+  .submit {
+    margin: 0 auto;
+  }
+  input[type="submit"] {
+    width: 50%;
+    text-transform: uppercase;
+    color: #329ea2;
+    margin: 15px auto;
+    text-align: center;
+    transition: all 1s linear;
+    &:hover {
+      background-color: #99cccc;
+      color: #000;
+      border: none;
+      letter-spacing: 2px;
+    }
+  }
+  a {
+    text-align: center;
+  }
+}

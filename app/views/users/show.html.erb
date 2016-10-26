@@ -13,7 +13,7 @@
   <p>Member: <%= current_user.first_name %> <%= current_user.last_name %></p>
   <p>Email: <%= current_user.email %></p>
 
-  <button type="button"><%= link_to 'Edit Profile', edit_user_registration_path %></button>
+  <button type="button"><%= link_to 'Edit Profile', edit_user_registration_path, class: "button" %></button>
 </div>
 
 <%= render 'layouts/navbar' %>

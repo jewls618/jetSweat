@@ -34,6 +34,7 @@ Ruby version 2.3.1
 - JQuery
 - Devise for User Authentication
 - CarrierWave for Photo Uploads
+- SASS & Foundations for styling
 - Factory_Girl, Capybara, RSpec for testing
 
 
