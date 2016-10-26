@@ -14,7 +14,6 @@ feature 'updating profile show page' do
     click_link 'Edit Profile'
 
     expect(page).to have_content('Edit')
-    expect(page).to have_content('Cancel my account')
   end
 
   scenario 'current user can make edits to account' do
@@ -38,6 +37,5 @@ feature 'updating profile show page' do
     visit root_path
 
     expect(page).to_not have_link('My Account')
-    expect(page).to_not have_content('Cancel my account')
   end
 end
