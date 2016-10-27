@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root "locations#index"
+  get "/pages/:page" => "pages#show"
+  get "pages/about" => "pages#show"
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :users
   resources :locations do
