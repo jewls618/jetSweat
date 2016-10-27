@@ -30,8 +30,7 @@ Ruby version 2.3.1
 - Heroku for hosting
 - Codeship for continuous integration and deployment
 - CSS & Foundations for styling
-- Ajax
-- JQuery
+- Ajax & JQuery
 - Devise for User Authentication
 - CarrierWave for Photo Uploads
 - SASS & Foundations for styling
@@ -47,6 +46,7 @@ Ruby version 2.3.1
 - User can save or remove a workout to their favorites
 - User can leave a comment on a workout
 - User can edit or delete their own comments
+- User can add additional workouts
 - User can checkout the Yelp page for each result from the workouts show page
 - Admin has the ability to delete inappropriate comments, workouts or users
 

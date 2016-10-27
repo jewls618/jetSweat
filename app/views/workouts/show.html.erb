@@ -26,80 +26,85 @@
   <div class="small-12 columns">
     <% if @place_id %>
       <h1 id="workout-name"><a href="<%= @place_details["result"]["website"] %>", target="blank" class="business-name"><%= @workout.name %></a>
-        <% if @uri %>
-          <img src="<%= @uri %>", class="logo-pic">
-        <% end %>
+        <div class="admin">
+          <% if current_user %>
+            <% if current_user.admin? %>
+              <button type="button"><%= link_to 'Edit Workout', edit_location_category_workout_path(@location.id, @category.id, @workout.id), class: 'button' %></button>
+            <% end %>
+            <% if current_user.admin? %>
+              <button type="button"><%= link_to 'Delete Workout', location_category_workout_path(@location.id, @category.id, @workout.id), method: :delete, class: 'button' %></button>
+            <% end %>
+          <% end %>
+        </div>
       </h1>
       <h4 class="address"><%= @workout.street%></h4>
-      <% if @place_id %>
-        <div class="places_info">
-          <% if @place_details["result"]["formatted_phone_number"] %>
-            <span class="phone">Phone: <%= @place_details["result"]["formatted_phone_number"] %></span><br /><br />
+    <% else %>
+      <h1 id="workout-name"><%= @workout.name %>
+        <div class="admin">
+          <% if current_user %>
+            <% if current_user.admin? %>
+              <button type="button"><%= link_to 'Edit Workout', edit_location_category_workout_path(@location.id, @category.id, @workout.id), class: 'button' %></button>
+            <% end %>
+            <% if current_user.admin? %>
+              <button type="button"><%= link_to 'Delete Workout', location_category_workout_path(@location.id, @category.id, @workout.id), method: :delete, class: 'button' %></button>
+            <% end %>
           <% end %>
         </div>
-      <% end %>
-      <% else %>
-      <h1 id="workout-name"><%= @workout.name %></h1>
+      </h1>
       <h4 class="address"><%= @workout.street%></h4>
+    <% end %>
+  </div>
+</div>
+
+<br />
+
+<div class="row">
+  <div class="small-12 medium-4 columns">
+    <div id='map'>
+      <%= render 'layouts/map' %>
+    </div>
+    <br /><br />
+    <div class="hours">
       <% if @place_id %>
         <div class="places_info">
-          <% if @place_details["result"]["formatted_phone_number"] %>
-            <span class="phone">Phone: <%= @place_details["result"]["formatted_phone_number"] %></span><br /><br />
+          <% if @place_details["result"]["opening_hours"] %>
+            <span class="hours-header">BUSINESS HOURS:</span><br />
+            <span class="hours"><% @place_details["result"]["opening_hours"]["weekday_text"].each do |d| %>
+            <%= d %><br /></span>
+            <% end %>
           <% end %>
         </div>
       <% end %>
-    <% end %>
-  </div>
-</div>
-
-<div class="row">
-  <div class="small-12 columns" id='map'>
-    <%= render 'layouts/map' %>
-  </div>
-</div>
-
-<div class="row">
-  <div class="small-12 columns">
-    <% if current_user %>
-      <% if current_user.admin? %>
-        <button type="button"><%= link_to 'Edit Workout', edit_location_category_workout_path(@location.id, @category.id, @workout.id) %></button>
-      <% end %>
-      <% if current_user.admin? %>
-        <button type="button"><%= link_to 'Delete Workout', location_category_workout_path(@location.id, @category.id, @workout.id), method: :delete %></button>
-      <% end %>
-    <% end %>
-  </div>
-</div>
-
-<br />
-<br />
-
-<div class="row">
-  <div class="small-12 medium-6 columns">
-    <% if @place_id %>
-      <div class="places_info">
-        <% if @place_details["result"]["opening_hours"] %>
-          <span class="hours-header">BUSINESS HOURS:</span><br />
-          <span class="hours"><% @place_details["result"]["opening_hours"]["weekday_text"].each do |d| %>
-          <%= d %><br /></span>
+    </div>
+    <br /><br />
+    <div class="phone">
+      <% if @place_id %>
+        <div class="places_info">
+          <% if @place_details["result"]["formatted_phone_number"] %>
+            <span class="phone">PHONE: <%= @place_details["result"]["formatted_phone_number"] %></span><br /><br />
           <% end %>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-<br />
-<br />
-
-<div class="row">
-  <div class="small-12 columns">
-    <% if @yelp_data %>
-      <% @yelp_data.businesses.each do |result| %>
-        <span>Rating: <%= result.rating %> / 5</span>
+        </div>
       <% end %>
-    <% end %>
+    </div>
     <br />
+    <div class="rating">
+      <% if @yelp_data %>
+        <% @yelp_data.businesses.each do |result| %>
+          <span>AVERAGE RATING: <%= result.rating %> / 5</span><br />
+        <% end %>
+      <% end %>
+    </div>
+    <br /><br />
+    <div class="pic">
+      <% if @place_id %>
+        <% if @uri %>
+          <img src="<%= @uri %>", class="pic">
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="small-12 medium-8 columns">
     <% if @place_id %>
       <div class="comment">
       <% if !@reviews.nil? %>
@@ -115,13 +120,9 @@
         <% end %>
       </div>
     <% end %>
-  </div>
-</div>
-<br />
-
-<div class="row">
-  <div class="medium-12 columns">
-    <h3 class="comments">COMMENTS</h3>
+  <br /><br />
+  <div class="comments">
+    <h3 class="comments">jetSweat COMMENTS</h3>
     <span><%= link_to 'Add New Comment', new_workout_comment_path(@workout.id), class: "comm" %></span><br />
     <br />
     <ul>
@@ -145,8 +146,12 @@
     </ul>
   </div>
 </div>
-<br />
 
-<span><%= link_to "Back to Results", location_category_workouts_path, class: "back" %></span>
+<div class-"row">
+  <div class="small-12 columns">
+    <br /><br /><br /><br />
+    <span><%= link_to "Back to Results", location_category_workouts_path, class: "back" %></span>
+  </div>
+</div>
 
 <%= render 'layouts/navbar' %>
