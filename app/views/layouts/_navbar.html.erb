@@ -19,9 +19,14 @@
         <li class="account"><%= link_to 'Favorite Workouts', favorites_path %>
         <li class="account"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
       <% else %>
+      <div class="about">
+    </div>
       <li class="account"><%= link_to 'Sign In', new_user_session_path %></li>
       <li class="account"><%= link_to 'Sign Up', new_user_registration_path %></li>
       <% end %>
+
     </ul>
+    <span class="account"><%= link_to '', pages_about_path, class: "about" %></span>
   </nav>
+<span class="account"><%= link_to 'About', pages_about_path, class: "about" %></span>
 </nav>
