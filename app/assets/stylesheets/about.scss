@@ -4,7 +4,21 @@ p#about-section {
   background-color: #00868b;
   margin: auto;
   padding: 30px;
-  border-radius: 3%;
-  font-size: 20px;
+  font-size: 18px;
   margin-top: 40px;
+}
+@media (max-width: 700px) {
+  p#about-section {
+    width: 90%;
+    color: white;
+    background-color: #00868b;
+    margin: auto;
+    padding: 30px;
+    font-size: 10px;
+    margin-top: 40px;
+  }
+  a.about {
+    font-size: 10px;
+    color: white;
+  }
 }
