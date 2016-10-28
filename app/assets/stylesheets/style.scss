@@ -175,26 +175,11 @@ a.add:hover {
 .body {
   padding: 20px;
 }
-#map {
-  width: 300px;
-  height: 260px;
-}
 #all-workouts {
   width: 50%;
   height: 500px;
   display: inline-block;
   float: left;
-}
-#result-map {
-  width: 40%;
-  height: 600px;
-  display: inline-block;
-  float: right;
-  margin-right: 20px;
-  top: 10px;
-  left: 10px;
-  position: fixed;
-  margin-right: 75px;
 }
 li.result:hover {
   border-bottom: 2px solid #ccc;
@@ -239,21 +224,6 @@ div#content {
   }
   li.account, li.signed-in {
     font-size: 10px;
-  }
-  #result-map {
-    width: 40%;
-    height: 200px;
-    display: inline-block;
-    float: right;
-    margin-right: 20px;
-    top: 10px;
-    left: 10px;
-    position: fixed;
-    z-index: 100;
-  }
-  div#map {
-    width: 50px;
-    height: 50px;
   }
   div#content {
     height: 500px;

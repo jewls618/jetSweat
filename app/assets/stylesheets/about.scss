@@ -19,6 +19,10 @@ p#about-section {
   }
   a.about {
     font-size: 10px;
-    color: white;
+    color: #00868b;
+  }
+  a.about.no-show {
+    color: #00868b;
+    display: hidden;
   }
 }
