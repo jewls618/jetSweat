@@ -8,7 +8,7 @@ body {
   background-color: black;
   padding: 50px;
   text-align: left;
-  margin: -10px -10px 10px -10px;
+  margin: -10px -10px 10px -5px;
   font-size: 80px;
   font-family: "Righteous", serif;
 }
@@ -20,6 +20,8 @@ a:hover {
 }
 a#jet {
   color: white;
+  padding-left: 10px;
+  margin-left: 10px;
 }
 a#jet:hover {
   color: #00868b;
