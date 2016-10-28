@@ -70,8 +70,6 @@ class WorkoutsController < ApplicationController
     @workout = Workout.find(params[:id])
     if @workout.update_attributes(workout_params)
       redirect_to location_category_workout_path(@location.id, @category.id, @workout.id)
-    else
-      render :edit
     end
   end
 

@@ -118,6 +118,12 @@
         1,
         null
       ],
+      "/Users/juliegraceffa/challenges/breakable-toy/jet-sweat/app/models/user_location.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/juliegraceffa/challenges/breakable-toy/jet-sweat/app/models/workout.rb": [
         1,
         1,
@@ -209,8 +215,6 @@
         2,
         2,
         2,
-        null,
-        0,
         null,
         null,
         null,
@@ -480,27 +484,7 @@
         null,
         null
       ],
-      "/Users/juliegraceffa/challenges/breakable-toy/jet-sweat/app/channels/application_cable/channel.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/juliegraceffa/challenges/breakable-toy/jet-sweat/app/channels/application_cable/connection.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
       "/Users/juliegraceffa/challenges/breakable-toy/jet-sweat/app/controllers/pages_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
         0,
         0,
         0,
@@ -519,14 +503,8 @@
         0,
         0,
         0
-      ],
-      "/Users/juliegraceffa/challenges/breakable-toy/jet-sweat/app/models/user_location.rb": [
-        0,
-        0,
-        0,
-        0
       ]
     },
-    "timestamp": 1477676727
+    "timestamp": 1477683795
   }
 }
