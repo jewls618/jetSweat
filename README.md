@@ -2,6 +2,7 @@
 
 ![Build Status](https://codeship.com/projects/653fd430-7435-0134-88cf-76a75a837005/status?branch=master)
 ![Code Climate](https://codeclimate.com/github/jewls618/jetSweat.png)
+[![Coverage Status](https://coveralls.io/repos/github/jewls618/jetSweat/badge.svg?branch=master)](https://coveralls.io/github/jewls618/jetSweat?branch=master)
 
 
 #Heroku Link
