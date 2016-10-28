@@ -60,6 +60,7 @@ Ruby version 2.3.1
 - Bundle install `bundle`
 - Create `rake db:create`
 - Migrate `rake db:migrate`
+- Seed `rake db:seed`
 - Launch a Rails server `rails server`
 - Visit `http://localhost:3000` in your browser
 
