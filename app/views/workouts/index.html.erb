@@ -1,48 +1,61 @@
-<div id="search">
-  <%= form_tag(location_category_workouts_path(@location.id, @category.id), method: 'get', id: 'search-form') do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search All Workouts" %>
-    <%= submit_tag "Search", name: nil %>
-    <% if @all_workouts.blank? %>
-      <p id="search-results">No results found.</p>
-    <% end %>
-  <% end %>
-</div>
-
-<span><%= link_to "Add New Workout", new_location_category_workout_path, class: "back add" %>
-</span>
-
-<h1 class="category">
-  <% if @category.category == 'Barre Class' || @category.category == 'Spin Class' %>
-    <%= @category.category %>es in <%= @location.city %>:
-  <% elsif @category.category == 'Swim'%>
-    <%= @category.category %>ming Pools in <%= @location.city %>:
-  <% elsif @category.category == 'Rock Climbing'%>
-    <%= @category.category %> in <%= @location.city %>:
-  <% else %>
-    <%= @category.category %> in <%= @location.city %>:
-  <% end %>
-</h1>
-
-<div id="wrapper">
-  <div id='result-map'>
-    <div id="sticker">  <%= render 'layouts/resultsmap' %></div>
-  </div>
-
-  <div id="mainContent">
-    <ol>
-      <% @all_workouts.each do |w| %>
-      <li class="result" id="<%= w.id %>">
-        <%= link_to w.name, location_category_workout_path(@location.id, @category.id, w.id) %>
-        <br />
-        <%= w.street %>
-      </li><br />
+<div class="row">
+  <div class="small-12 columns">
+    <div id="search">
+      <%= form_tag(location_category_workouts_path(@location.id, @category.id), method: 'get', id: 'search-form') do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search All Workouts" %>
+        <%= submit_tag "Search", name: nil %>
+        <% if @all_workouts.blank? %>
+          <p id="search-results">No results found.</p>
+        <% end %>
       <% end %>
-    </ul>
-    <br / ><br />
+    </div>
   </div>
 </div>
 
-<div class="cats-back">
-  <span>  <%= link_to "Back to Categories", location_categories_path(@location.id), class: "back" %>
-  </span>
-<div>
+<div class="row">
+  <div class="small-12 columns">
+    <h1 class="category">
+      <% if @category.category == 'Barre Class' || @category.category == 'Spin Class' %>
+        <%= @category.category %>es in <%= @location.city %>:
+      <% elsif @category.category == 'Swim'%>
+        <%= @category.category %>ming Pools in <%= @location.city %>:
+      <% elsif @category.category == 'Rock Climbing'%>
+        <%= @category.category %> in <%= @location.city %>:
+      <% else %>
+        <%= @category.category %> in <%= @location.city %>:
+      <% end %>
+    </h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-6 columns">
+    <div id='result-map'>
+      <div id="sticker"> <%= render 'layouts/resultsmap' %></div>
+    </div>
+  </div>
+  <div class="small-12 medium-6 columns">
+    <div id="mainContent">
+      <ol>
+        <% @all_workouts.each do |w| %>
+        <li class="result" id="<%= w.id %>">
+          <%= link_to w.name, location_category_workout_path(@location.id, @category.id, w.id) %>
+          <br />
+          <%= w.street %>
+        </li><br />
+        <% end %>
+      </ul>
+      <br / ><br />
+    </div>
+    <span><%= link_to "Add New Workout", new_location_category_workout_path, class: "back add" %></span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+    <div class="cats-back">
+      <span>  <%= link_to "Back to Categories", location_categories_path(@location.id), class: "back" %>
+      </span>
+    <div>
+  </div>
+</div>
