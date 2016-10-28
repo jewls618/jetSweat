@@ -4,6 +4,8 @@
 ![Code Climate](https://codeclimate.com/github/jewls618/jetSweat.png)
 [![Coverage Status](https://coveralls.io/repos/github/jewls618/jetSweat/badge.svg?branch=master)](https://coveralls.io/github/jewls618/jetSweat?branch=master)
 
+www.jet-sweat.com
+
 
 #Heroku Link
 
