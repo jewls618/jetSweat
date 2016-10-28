@@ -1,5 +1,8 @@
 require 'webmock/rspec'
 require 'vcr'
+require 'coveralls'
+
+Coveralls.wear!('rails')
 
 WebMock.disable_net_connect!(allow_localhost: true)
 
